@@ -1,0 +1,29 @@
+.nav {
+    background-color: #928DAB;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 20px;
+    transition: background 0.3s;
+    font-family: 'Lato', sans-serif;
+}
+
+.links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.welcome {
+    padding: 10px;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+}

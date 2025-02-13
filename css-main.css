@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+body{
+    background-color: #1F1C2C;
+    color: #928DAB;
+} 
+
+.row {
+    display: flex;
+    justify-content: flex-start; /* Aligns form to the left */
+    padding: 20px;
+}
+
+.column-form {
+    width: 40%; /* Adjust width to leave space for the table */
+    background-color: #222; /* Dark background for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    color: white; /* White text for readability */
+    -webkit-box-shadow: 0px 0px 30px 14px #000000; 
+    box-shadow: 0px 0px 30px 14px #000000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds spacing between form fields */
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.submit-button input {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.submit-button input:hover {
+    background-color: #45a049;
+}
