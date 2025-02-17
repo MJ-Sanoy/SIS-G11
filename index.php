@@ -1,5 +1,5 @@
+<meta charset="UTF-8">
 <div class="nav"><?php include 'navpan.php'?></div>
-
 <link rel="stylesheet" href="css-main.css">
 <div class="row">
     <div class="column-form">
