@@ -6,35 +6,38 @@
         <form action="inputdata.php" method="POST">
             <div class="product-name">
                 <label for="product-name">Product Name: </label>
-                <input type="text" name="product-name" id="pname">
+                <input type="text" name="product-name" id="pname" required>
             </div>
             <div class="product-description">
                 <label for="product-description">Product Description: </label>
-                <input type="text" name="product-description" id="pdesc">
+                <input type="text" name="product-description" id="pdesc" required>
             </div>
             <div class="product-classification">
                 <label for="product-classification">Product Classification: </label>
-                <select name="product-classification">
+                <select name="product-classification" required>
                     <option>Select</option>
                 </select>
             </div>
             <div class="product-stock-location">
                 <label for="product-stock-location">Product Stock Location: </label>
-                <select name="product-stock-locatio">
+                <select name="product-stock-locatio" required>
                     <option>Select</option>
                 </select>
             </div>
             <div class="product-quantity">
                 <label for="product-quantity">Product Quantity: </label>
-                <input type="number" name="product-quantity">
+                <input type="number" name="product-quantity" required>
             </div>
             <div class="product-delivery-date">
                 <label for="product-delivery-date">Delivery Date: </label>
-                <input type="date" name="product-delivery-date">
+                <input type="date" name="product-delivery-date" required>
             </div>
             <div class="submit-button">
                 <input type="Submit" value="Submit">
             </div>
         </form>
+    </div>
+    <div class="column-table">
+
     </div>
 </div>
