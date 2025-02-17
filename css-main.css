@@ -11,32 +11,30 @@ body{
 
 .row {
     display: flex;
-    justify-content: flex-end; /* Pushes the form to the right */
-    align-items: center; /* Centers it vertically */
-    height: 100vh; /* Makes it take full height */
-    padding-right: 5%; /* Adds some spacing from the right edge */
+    justify-content: flex-start; /* Aligns form to the left */
+    padding: 20px;
+    height: 100vh; /* Ensure the row takes full height to help with vertical centering */
 }
 
 .column-form {
-    width: 40%;
-    background-color: #222;
+    width: 20%; /* Adjust width for the form */
+    background-color: #222; /* Dark background for contrast */
     padding: 20px;
     border-radius: 10px;
-    color: white;
+    color: white; /* White text for readability */
     -webkit-box-shadow: 0px 0px 30px 14px #000000; 
     box-shadow: 0px 0px 30px 14px #000000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto; /* This ensures vertical centering inside the column */
+    margin-left: 225px;
 }
 
 form {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
 
 label {
     font-weight: bold;
@@ -60,4 +58,11 @@ input, select {
 
 .submit-button input:hover {
     background-color: #45a049;
+}
+
+#date{
+    text-align: center;  /* Center the text inside the input */
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
 }

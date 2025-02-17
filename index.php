@@ -26,11 +26,11 @@
             </div>
             <div class="product-quantity">
                 <label for="product-quantity">Product Quantity: </label>
-                <input type="number" name="product-quantity" required>
+                <input type="number" name="product-quantity" required min="0" max="100">
             </div>
             <div class="product-delivery-date">
-                <label for="product-delivery-date">Delivery Date: </label>
-                <input type="date" name="product-delivery-date" required>
+                <label for="product-delivery-date">Delivery Date: </label><br>
+                <input type="date" name="product-delivery-date" id="date" required placeholder="MM/DD/YYYY">
             </div>
             <div class="submit-button">
                 <input type="Submit" value="Submit">
