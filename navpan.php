@@ -1,10 +1,10 @@
  <link rel="stylesheet" href="css-nav.css">
  <div class="nav">
     <div class="links" id="landingpage">
-        <a href="">Home</a>
+        <a href="index.php">Home</a>
     </div>
     <div class="links" id="viewtable">
-        <a href="">View Table</a>
+        <a href="table.php">View Table</a>
     </div>
 </div>
 <div class="welcome">
