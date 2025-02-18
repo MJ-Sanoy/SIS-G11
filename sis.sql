@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2025 at 08:51 AM
+-- Generation Time: Feb 18, 2025 at 10:00 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,6 +32,22 @@ CREATE TABLE `c` (
   `c_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `c`
+--
+
+INSERT INTO `c` (`classification_id`, `c_name`) VALUES
+(1, 'Chips'),
+(2, 'Candies'),
+(3, 'Drinks'),
+(4, 'Snacks'),
+(5, 'Noodles'),
+(6, 'Canned Goods'),
+(7, 'Condiments'),
+(8, 'Baking'),
+(9, 'Spreads'),
+(10, 'Sauces');
+
 -- --------------------------------------------------------
 
 --
@@ -54,9 +70,134 @@ CREATE TABLE `p` (
   `name` text NOT NULL,
   `classification_id` int(11) NOT NULL,
   `p_desc` text NOT NULL,
-  `pieces/pack` varchar(10) NOT NULL,
+  `pieces_pack` varchar(10) DEFAULT NULL,
   `size` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `p`
+--
+
+INSERT INTO `p` (`product_id`, `name`, `classification_id`, `p_desc`, `pieces_pack`, `size`) VALUES
+(1, 'Piattos', 1, 'Cheese Flavor', NULL, '40g'),
+(2, 'Frutos', 2, 'Soft Chewy Candy', '50 pcs.', '175g'),
+(3, 'C2 AppleTea', 3, 'Apple Green Tea Flavor', NULL, '230ml'),
+(4, 'C2 Lemon Tea', 3, 'Lemon Green Tea Flavor', NULL, '230ml'),
+(5, 'Crossini', 4, 'Chocolate Flavor', '10 pcs.', '35g'),
+(6, 'Cheezy Corn Crunch', 4, 'Spicy & Cheesy Flavor', NULL, '22g'),
+(7, 'Coca-Cola', 3, 'Regular Mismo', NULL, '300ml'),
+(8, 'Maxx', 2, 'Cherry Flavor', '50 pcs.', '200g'),
+(9, 'Oishi Pillows', 4, 'Chocolate Filled Crackers', NULL, '24g'),
+(10, 'Mentos', 2, 'Mint Flavor', NULL, '38g'),
+(11, 'Richoco', 4, 'Chocolate Wafer', NULL, '50g'),
+(12, 'Lucky Me Pancit Canton', 5, 'Kalamansi Flavor', NULL, '60g'),
+(13, 'Lucky Me Instant Noodles', 5, 'Beef Flavor', NULL, '55g'),
+(14, 'Nissin Cup Noodles', 5, 'Seafood Flavor', NULL, '60g'),
+(15, 'Mountain Dew', 3, 'Mountain Dew Mismo', NULL, '295ml'),
+(16, 'Royal', 3, 'Tru-Orange Regular Mismo', NULL, '250ml'),
+(17, 'Sprite', 3, 'Sprite Mismo', NULL, '290ml'),
+(18, 'RC Cola', 3, 'RC Cola Misma', NULL, '237ml'),
+(19, 'Zest-O', 3, 'Zest-O Big 250 Apple', NULL, '250ml'),
+(20, 'Vcut', 1, 'Spicy Barbecue Flavor', NULL, '60g'),
+(21, 'Combi', 4, 'Choco wafer', NULL, '30g'),
+(22, 'Roller Coaster', 1, 'Cheddar Cheese Potato Rings', NULL, '85g'),
+(23, 'Hansel', 4, 'Chocolate Sandwich', NULL, '310g'),
+(24, 'Yakult', 3, 'Probiotic Milk', NULL, '65ml'),
+(25, 'Sting', 3, 'Energy Drink', NULL, '320ml'),
+(26, 'Lay\'s', 1, 'Classic Chips', NULL, '150g'),
+(27, 'Kit Kat', 4, 'Milk Chocolate Wafer Bar', NULL, '45g'),
+(28, 'Tropicana', 3, 'Orange Juice', NULL, '1L'),
+(29, 'Hershey\'s', 4, 'Milk Chocolate Bar', NULL, '100g'),
+(30, 'Red Bull', 3, 'Energy Drink', NULL, '250ml'),
+(31, 'Choco Mucho', 4, 'Chocolate and Wafer', NULL, '25g'),
+(32, 'Big Bang', 4, 'Popcorn', NULL, '100g'),
+(33, 'Gatorade', 3, 'Lemon-Lime', NULL, '500ml'),
+(34, 'M&M\'s', 2, 'Peanut Butter', NULL, '150g'),
+(35, 'Pringles', 1, 'Sour Cream & Onion', NULL, '70g'),
+(36, 'Reese\'s', 2, 'Peanut Butter Cups', NULL, '40g'),
+(37, '7-Up', 3, 'Regular', NULL, '330ml'),
+(38, 'Nescafe', 3, 'Instant Coffee', NULL, '100g'),
+(39, 'Oreo', 4, 'Original Cookies', NULL, '150g'),
+(40, 'Lays BBQ', 1, 'Barbecue Chips', NULL, '130g'),
+(41, 'Tostitos', 4, 'Tortilla Chips', NULL, '200g'),
+(42, 'Fanta', 3, 'Orange Flavor', NULL, '330ml'),
+(43, 'Munch', 4, 'Chocolate Bar', NULL, '60g'),
+(44, 'Cheetos', 1, 'Cheese Flavored Snacks', NULL, '60g'),
+(45, 'Snickers', 4, 'Chocolate Peanut Bar', NULL, '50g'),
+(46, 'Lipton', 3, 'Iced Tea Lemon', NULL, '500ml'),
+(47, 'Goya', 4, 'Chocolate Coated Nuts', NULL, '150g'),
+(48, 'Minute Maid', 3, 'Apple Juice', NULL, '1L'),
+(49, 'Sweet Corn', 4, 'Sweet Corn Snack', NULL, '25g'),
+(50, 'Skittles', 2, 'Tropical Flavor', NULL, '150g'),
+(51, 'Mountain Dew', 3, 'Code Red', NULL, '500ml'),
+(52, 'Pepsi', 3, 'Regular Soda', NULL, '300ml'),
+(53, 'Big Gulp', 3, 'Slush', NULL, '500ml'),
+(54, 'Crunch', 4, 'Chocolate and Peanut Butter Bar', NULL, '40g'),
+(55, 'Lays Sour Cream', 1, 'Sour Cream Chips', NULL, '150g'),
+(56, 'Red Ribbon', 4, 'Butter Cake', NULL, '500g'),
+(57, 'Kit Kat Chunky', 4, 'Chocolate Bar', NULL, '60g'),
+(58, 'Gummy Bears', 2, 'Fruit-flavored Gummies', NULL, '200g'),
+(59, 'Puregold', 3, 'Pure Orange Juice', NULL, '250ml'),
+(60, 'Cadbury', 4, 'Dairy Milk Chocolate', NULL, '100g'),
+(61, 'Tropicana', 3, 'Pineapple Juice', NULL, '1L'),
+(62, 'Mentos', 2, 'Fruity Chewy Candy', NULL, '37g'),
+(63, 'Popcorn King', 4, 'Buttered Popcorn', NULL, '150g'),
+(64, 'Choco Pie', 4, 'Chocolate Filled Snack Cake', NULL, '80g'),
+(65, 'Aquafina', 3, 'Bottled Water', NULL, '500ml'),
+(66, 'Viso', 3, 'Vitamin C Drink', NULL, '330ml'),
+(67, 'Cadbury Dairy Milk', 4, 'Chocolate Bar', NULL, '120g'),
+(68, 'Bounty', 4, 'Coconut Chocolate Bar', NULL, '58g'),
+(69, 'Sprite Zero', 3, 'Sugar-Free Sprite', NULL, '330ml'),
+(70, 'Jack n\' Jill', 1, 'Potato Chips, Barbecue', NULL, '80g'),
+(71, 'Hershey\'s Kisses', 2, 'Milk Chocolate', NULL, '150g'),
+(72, 'Del Monte', 3, 'Pineapple Juice', NULL, '1L'),
+(73, 'C2 Green Tea', 3, 'Lemon & Honey', NULL, '230ml'),
+(74, 'Gatorade Frost', 3, 'Glacier Freeze', NULL, '500ml'),
+(75, 'Jolly Time Popcorn', 4, 'Classic Butter', NULL, '100g'),
+(76, 'M&M\'s Peanut', 2, 'Peanut Chocolate Candies', NULL, '200g'),
+(77, 'Pepsi Max', 3, 'Sugar-Free Cola', NULL, '330ml'),
+(78, 'Oishi Prawn Crackers', 4, 'Original Prawn Flavor', NULL, '100g'),
+(79, 'McVitie\'s Digestive Biscuits', 4, 'Chocolate Coated Biscuits', NULL, '250g'),
+(80, 'Crush', 3, 'Orange Soda', NULL, '330ml'),
+(81, 'Dole', 3, 'Orange Juice', NULL, '1L'),
+(82, 'Chippy', 1, 'Barbecue Flavor', NULL, '80g'),
+(83, 'Mang Juan', 1, 'Spicy Corn Chips', NULL, '50g'),
+(84, 'Boy Bawang', 4, 'Garlicky Flavor', NULL, '50g'),
+(85, 'Nissin Pancit Canton', 5, 'Original Flavor', NULL, '60g'),
+(86, 'Sunny Gold', 4, 'Banana Chips', NULL, '150g'),
+(87, 'Milo', 3, 'Chocolate Malt Drink', NULL, '500g'),
+(88, 'Juicy Lemon', 3, 'Lemon Iced Tea', NULL, '500ml'),
+(89, 'Taro Chips', 1, 'Original Flavor', NULL, '100g'),
+(90, 'Red Ribbon', 4, 'Ube Cake', NULL, '400g'),
+(91, 'White King', 4, 'Pancake Mix', NULL, '200g'),
+(92, 'Oishi Prawn Crackers', 4, 'Spicy Prawn', NULL, '150g'),
+(93, 'Bear Brand', 3, 'Powdered Milk', NULL, '400g'),
+(94, 'Ligo', 6, 'Sardines', NULL, '155g'),
+(95, 'Century Tuna', 6, 'Hot & Spicy', NULL, '180g'),
+(96, 'Lucky Me Pancit Canton', 5, 'Instant Noodles', NULL, '60g'),
+(97, '555 Tuna', 6, 'Chunk Style', NULL, '180g'),
+(98, 'Jack n\' Jill', 4, 'Calbee Sweet Potato Chips', NULL, '60g'),
+(99, 'C2 Green Tea', 3, 'Lemon Flavor', NULL, '230ml'),
+(100, 'Nestle Chuckie', 3, 'Chocolate Milk', NULL, '250ml'),
+(101, 'Nova', 1, 'Country Cheddar', NULL, '78g'),
+(102, 'Rebisco Crackers', 4, 'Butter Flavor', NULL, '32g'),
+(103, 'NutriAsia Datu Puti', 7, 'Soy Sauce', NULL, '385ml'),
+(104, 'Chips Delight', 4, 'Chocolate Chip Cookies', NULL, '60g'),
+(105, 'Zesto Choco Boom', 3, 'Chocolate Drink', NULL, '200ml'),
+(106, 'Cloud 9', 4, 'Chocolate Bar', NULL, '50g'),
+(107, 'Nestle Bear Brand', 3, 'Sterilized Milk', NULL, '500ml'),
+(108, 'Oreo Thins', 4, 'Vanilla Creme', NULL, '100g'),
+(109, 'Nagaraya', 4, 'BBQ Cracker Nuts', NULL, '160g'),
+(110, 'Gulaman Powder', 8, 'Strawberry', NULL, '50g'),
+(111, 'Sprite Cranberry', 3, 'Cranberry Soda', NULL, '330ml'),
+(112, 'Energen', 3, 'Chocolate Cereal Drink', NULL, '400ml'),
+(113, 'Ruffles', 1, 'Sour Cream & Onion', NULL, '125g'),
+(114, 'Dutch Mill', 3, 'Yogurt Drink', NULL, '180ml'),
+(115, 'Primo', 4, 'Butter Cookies', NULL, '150g'),
+(116, 'Nutella', 9, 'Hazelnut Spread', NULL, '350g'),
+(117, 'Tostitos Salsa', 10, 'Chunky Medium', NULL, '400g'),
+(118, 'Coca-Cola Zero', 3, 'Sugar-Free Cola', NULL, '500ml'),
+(119, 'Lays Stax', 1, 'Sour Cream & Onion', NULL, '155g');
 
 -- --------------------------------------------------------
 
@@ -73,6 +214,162 @@ CREATE TABLE `stck` (
   `date_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `stck`
+--
+
+INSERT INTO `stck` (`stck_id`, `product_id`, `storage_id`, `num_stck`, `remarks`, `date_id`) VALUES
+(1, 1, 1, 57, 'In stock', 0),
+(2, 2, 2, 94, 'In stock', 0),
+(3, 3, 3, 19, 'Low stock', 0),
+(4, 4, 2, 27, 'Low stock', 0),
+(5, 5, 1, 35, 'In stock', 0),
+(6, 6, 1, 29, 'Low stock', 0),
+(7, 7, 2, 12, 'Low stock', 0),
+(8, 8, 3, 53, 'In stock', 0),
+(9, 9, 1, 37, 'In stock', 0),
+(10, 10, 3, 75, 'In stock', 0),
+(11, 11, 1, 32, 'Low stock', 0),
+(12, 12, 1, 21, 'Low stock', 0),
+(13, 13, 1, 42, 'In stock', 0),
+(14, 14, 1, 12, 'Low stock', 0),
+(15, 15, 2, 85, 'In stock', 0),
+(16, 16, 2, 93, 'In stock', 0),
+(17, 17, 2, 64, 'In stock', 0),
+(18, 18, 2, 32, 'Low stock', 0),
+(19, 19, 2, 21, 'Low stock', 0),
+(20, 20, 1, 72, 'In stock', 0),
+(21, 21, 1, 14, 'Low stock', 0),
+(22, 22, 1, 10, 'Low stock', 0),
+(23, 23, 1, 50, 'In stock', 0),
+(24, 24, 2, 23, 'Low stock', 0),
+(25, 25, 2, 79, 'In stock', 0),
+(26, 26, 1, 43, 'In stock', 0),
+(27, 27, 1, 36, 'In stock', 0),
+(28, 28, 2, 56, 'In stock', 0),
+(29, 29, 1, 48, 'In stock', 0),
+(30, 30, 2, 60, 'In stock', 0),
+(31, 31, 1, 49, 'In stock', 0),
+(32, 32, 1, 20, 'Low stock', 0),
+(33, 33, 2, 80, 'In stock', 0),
+(34, 34, 3, 68, 'In stock', 0),
+(35, 35, 1, 75, 'In stock', 0),
+(36, 36, 3, 52, 'In stock', 0),
+(37, 37, 2, 30, 'Low stock', 0),
+(38, 38, 2, 62, 'In stock', 0),
+(39, 39, 1, 65, 'In stock', 0),
+(40, 40, 1, 58, 'In stock', 0),
+(41, 41, 1, 22, 'Low stock', 0),
+(42, 42, 2, 26, 'Low stock', 0),
+(43, 43, 1, 19, 'Low stock', 0),
+(44, 44, 1, 23, 'Low stock', 0),
+(45, 45, 1, 29, 'Low stock', 0),
+(46, 46, 2, 13, 'Low stock', 0),
+(47, 47, 1, 17, 'Low stock', 0),
+(48, 48, 2, 55, 'In stock', 0),
+(49, 49, 1, 80, 'In stock', 0),
+(50, 50, 3, 60, 'In stock', 0),
+(51, 51, 2, 48, 'In stock', 0),
+(52, 52, 2, 54, 'In stock', 0),
+(53, 53, 2, 38, 'In stock', 0),
+(54, 54, 1, 33, 'In stock', 0),
+(55, 55, 1, 72, 'In stock', 0),
+(56, 56, 1, 27, 'Low stock', 0),
+(57, 57, 1, 63, 'In stock', 0),
+(58, 58, 2, 49, 'In stock', 0),
+(59, 59, 3, 28, 'Low stock', 0),
+(60, 60, 2, 25, 'Low stock', 0),
+(61, 61, 1, 30, 'Low stock', 0),
+(62, 62, 3, 16, 'Low stock', 0),
+(63, 63, 1, 32, 'Low stock', 0),
+(64, 64, 1, 18, 'Low stock', 0),
+(65, 65, 1, 25, 'Low stock', 0),
+(66, 66, 2, 28, 'Low stock', 0),
+(67, 67, 1, 19, 'Low stock', 0),
+(68, 68, 1, 23, 'Low stock', 0),
+(69, 69, 2, 77, 'In stock', 0),
+(70, 70, 1, 64, 'In stock', 0),
+(71, 71, 2, 45, 'In stock', 0),
+(72, 72, 1, 82, 'In stock', 0),
+(73, 73, 3, 53, 'In stock', 0),
+(74, 74, 1, 32, 'Low stock', 0),
+(75, 75, 1, 28, 'Low stock', 0),
+(76, 76, 2, 59, 'In stock', 0),
+(77, 77, 2, 64, 'In stock', 0),
+(78, 78, 1, 42, 'In stock', 0),
+(79, 79, 1, 51, 'In stock', 0),
+(80, 80, 2, 68, 'In stock', 0),
+(81, 81, 1, 55, 'In stock', 0),
+(82, 82, 1, 68, 'In stock', 0),
+(83, 83, 2, 45, 'In stock', 0),
+(84, 84, 3, 72, 'In stock', 0),
+(85, 85, 1, 64, 'In stock', 0),
+(86, 86, 1, 50, 'In stock', 0),
+(87, 87, 1, 83, 'In stock', 0),
+(88, 88, 2, 39, 'In stock', 0),
+(89, 89, 1, 51, 'In stock', 0),
+(90, 90, 2, 56, 'In stock', 0),
+(91, 91, 1, 42, 'In stock', 0),
+(92, 92, 3, 48, 'In stock', 0),
+(93, 93, 1, 70, 'In stock', 0),
+(94, 94, 2, 34, 'In stock', 0),
+(95, 95, 2, 49, 'In stock', 0),
+(96, 96, 2, 58, 'In stock', 0),
+(97, 97, 3, 61, 'In stock', 0),
+(98, 98, 1, 42, 'In stock', 0),
+(99, 99, 2, 51, 'In stock', 0),
+(100, 100, 1, 40, 'In stock', 0),
+(101, 101, 2, 58, 'In stock', 0),
+(102, 102, 1, 29, 'Low stock', 0),
+(103, 103, 1, 45, 'In stock', 0),
+(104, 104, 1, 37, 'In stock', 0),
+(105, 105, 1, 27, 'Low stock', 0),
+(106, 106, 3, 61, 'In stock', 0),
+(107, 107, 1, 33, 'In stock', 0),
+(108, 108, 2, 52, 'In stock', 0),
+(109, 109, 1, 48, 'In stock', 0),
+(110, 110, 2, 20, 'Low stock', 0),
+(111, 111, 2, 35, 'In stock', 0),
+(112, 112, 3, 68, 'In stock', 0),
+(113, 113, 1, 49, 'In stock', 0),
+(114, 114, 3, 57, 'In stock', 0),
+(115, 115, 2, 42, 'In stock', 0),
+(116, 116, 2, 25, 'Low stock', 0),
+(117, 117, 1, 19, 'Low stock', 0),
+(118, 118, 1, 50, 'In stock', 0),
+(119, 119, 3, 62, 'In stock', 0);
+
+--
+-- Triggers `stck`
+--
+DELIMITER $$
+CREATE TRIGGER `update_stock_status_after_update` AFTER UPDATE ON `stck` FOR EACH ROW BEGIN
+    -- Check if num_stck has changed
+    IF NEW.num_stck != OLD.num_stck THEN
+        -- Update the remarks based on the new num_stck value for the specific product_id
+        UPDATE stck
+        SET remarks = CASE
+            WHEN NEW.num_stck = 0 THEN 'No available stock'
+            WHEN NEW.num_stck <= 32 THEN 'Low stock'
+            WHEN NEW.num_stck > 32 THEN 'In stock'
+        END
+        WHERE product_id = NEW.product_id;
+    END IF;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `update_stock_status_before_update` BEFORE UPDATE ON `stck` FOR EACH ROW BEGIN
+    -- Set the remarks before the update takes place
+    SET NEW.remarks = CASE
+        WHEN NEW.num_stck = 0 THEN 'No available stock'
+        WHEN NEW.num_stck <= 32 THEN 'Low stock'
+        WHEN NEW.num_stck > 32 THEN 'In stock'
+    END;
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +380,15 @@ CREATE TABLE `strg` (
   `storage_id` int(11) NOT NULL,
   `strg_location` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `strg`
+--
+
+INSERT INTO `strg` (`storage_id`, `strg_location`) VALUES
+(1, 'Storage A'),
+(2, 'Storage B'),
+(3, 'Storage C');
 
 --
 -- Indexes for dumped tables
@@ -126,7 +432,7 @@ ALTER TABLE `strg`
 -- AUTO_INCREMENT for table `c`
 --
 ALTER TABLE `c`
-  MODIFY `classification_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `classification_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `date`
@@ -138,19 +444,19 @@ ALTER TABLE `date`
 -- AUTO_INCREMENT for table `p`
 --
 ALTER TABLE `p`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT for table `stck`
 --
 ALTER TABLE `stck`
-  MODIFY `stck_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `stck_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT for table `strg`
 --
 ALTER TABLE `strg`
-  MODIFY `storage_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `storage_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
