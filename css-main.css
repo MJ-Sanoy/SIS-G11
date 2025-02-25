@@ -11,22 +11,25 @@ body{
 
 .row {
     display: flex;
-    justify-content: flex-start; /* Aligns form to the left */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
     padding: 20px;
-    height: 100vh; /* Ensure the row takes full height to help with vertical centering */
+    width: 100%;
+    height: 100vh; 
 }
 
 .column-form {
-    width: 20%; /* Adjust width for the form */
-    background-color: #222; /* Dark background for contrast */
+    width: 40%;
+    background-color: #222;
     padding: 20px;
     border-radius: 10px;
-    color: white; /* White text for readability */
+    color: #E6EBE4;
     -webkit-box-shadow: 0px 0px 30px 14px #000000; 
     box-shadow: 0px 0px 30px 14px #000000;
     margin-top: auto;
-    margin-bottom: auto; /* This ensures vertical centering inside the column */
-    margin-left: 225px;
+    margin-bottom: auto;
+    margin-left: 10px;
 }
 
 form {
@@ -61,8 +64,48 @@ input, select {
 }
 
 #date{
-    text-align: center;  /* Center the text inside the input */
+    text-align: center;
     padding: 10px;
     font-size: 16px;
     width: 200px;
+}
+
+.column-table {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    margin-top: 150px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+    -webkit-box-shadow: 0px 0px 30px 14px #000000; 
+    box-shadow: 0px 0px 30px 14px #000000;
+}
+
+.column-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.column-table th, .column-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.column-table h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #E6EBE4;
+}
+
+.footer {
+    background-color: #222;
+    color: #E6EBE4;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

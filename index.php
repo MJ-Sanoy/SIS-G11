@@ -1,5 +1,6 @@
 <meta charset="UTF-8">
 <div class="nav"><?php include 'navpan.php'?></div>
+<link rel="stylesheet" href="css-table.css">
 <link rel="stylesheet" href="css-main.css">
 <div class="row">
     <div class="column-form">
@@ -38,6 +39,10 @@
         </form>
     </div>
     <div class="column-table">
-
+        <h1>Table Data Overview</h1>
+        <?php include 'D:\xampp\htdocs\SIS-G11\table_sql.php';?>
     </div>
+</div>
+<div>
+    <div class="footer">Sales Inventory System project of Mark Joshua Sanoy</div>
 </div>

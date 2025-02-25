@@ -4,9 +4,9 @@
     $server="localhost";
     $db_name="sis";
 
-    $con = new mysqli ($server, $username, $password, $db_name);
+    $conn = new mysqli ($server, $username, $password, $db_name);
 
-    if ($con->connect_error) {
+    if ($conn->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }
 ?>
