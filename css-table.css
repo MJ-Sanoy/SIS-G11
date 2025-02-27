@@ -4,7 +4,7 @@ table {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     color: white;
 }
 
@@ -50,4 +50,22 @@ a{
 
 .btn-delete:hover {
     background-color: #5e24a9c8;
+}
+
+.editable-dropdown {
+    background-color: #444; /* Dark background for dropdowns */
+    color: #FFFFFF; /* White text color */
+    border: 1px solid #555; /* Slightly lighter border color */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.editable-dropdown option {
+    background-color: #333; /* Dark background for dropdown options */
+    color: #FFFFFF; /* White text color */
+}
+
+.editable {
+    background-color: #333; /* Dark background for editable cells */
+    color: #FFFFFF; /* White text color */
 }

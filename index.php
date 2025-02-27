@@ -43,6 +43,4 @@
         <?php include 'D:\xampp\htdocs\SIS-G11\table_sql.php';?>
     </div>
 </div>
-<div>
-    <div class="footer">Sales Inventory System project of Mark Joshua Sanoy</div>
-</div>
+<?php include 'footer.php';?>

@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+    color: #FAF9F6;
     margin: 0;
 }
 
@@ -98,14 +99,4 @@ input, select {
     text-align: center;
     margin-bottom: 20px;
     color: #E6EBE4;
-}
-
-.footer {
-    background-color: #222;
-    color: #E6EBE4;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
