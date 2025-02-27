@@ -24,3 +24,38 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
+.welcome {
+    text-align: center;
+    padding: 10px;
+    background-color: #444; /* Dark background color */
+    color: #FFFFFF; /* White text color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Box shadow for 3D effect */
+    position: relative; /* Required for the animation */
+    animation: lightCircle 5s infinite; /* Apply the animation */
+}
+
+.welcome h1 {
+    font-size: 36px; /* Increase font size */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for 3D effect */
+    margin: 0;
+}
+
+@keyframes lightCircle {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+    }
+    25% {
+        box-shadow: 10px 0 10px 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 10px 10px 5px rgba(255, 255, 255, 0.5);
+    }
+    75% {
+        box-shadow: -10px 0 10px 5px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+    }
+}
