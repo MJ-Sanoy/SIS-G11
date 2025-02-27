@@ -7,6 +7,7 @@ $sql = "SELECT
             c.c_name AS classification,
             strg.strg_location,
             stck.num_stck,
+            p.size,
             d.date_delivered,
             stck.remarks
         FROM p
@@ -26,6 +27,7 @@ if ($result->num_rows > 0) {
                 <th>Classification</th>
                 <th>Storage Location</th>
                 <th>Stock Number</th>
+                <th>Size</th>
                 <th>Date Delivered</th>
                 <th>Remarks</th>
                 <th>Action</th>
@@ -59,6 +61,7 @@ if ($result->num_rows > 0) {
                     </select>
                 </td>
                 <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='num_stck'>" . $row["num_stck"] . "</td>
+                <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='size'>" . $row["size"] . "</td>
                 <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='date_delivered'>" . $row["date_delivered"] . "</td>
                 <td>" . $remarks . "</td>
                 <td>
