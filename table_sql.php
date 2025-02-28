@@ -1,7 +1,9 @@
 <?php
 include 'db_connect.php';
+
 $sql = "SELECT 
             p.product_id,
+            stck.stck_id,
             p.name AS product_name,
             p.p_desc,
             c.c_name AS classification,
@@ -14,7 +16,7 @@ $sql = "SELECT
         LEFT JOIN c ON p.classification_id = c.classification_id
         LEFT JOIN stck ON p.product_id = stck.product_id
         LEFT JOIN d ON stck.date_id = d.date_id
-        LEFT JOIN strg ON stck.storage_id = strg.storage_id;";
+        LEFT JOIN strg ON stck.storage_id = strg.storage_id";
 
 $result = $conn->query($sql);
 
@@ -54,15 +56,17 @@ if ($result->num_rows > 0) {
                     </select>
                 </td>
                 <td>
-                    <select class='editable-dropdown' data-id='" . $row['product_id'] . "' data-column='storage_id'>
+                    <select class='editable-dropdown' data-id='" . $row['stck_id'] . "' data-column='storage_id'>
                         <option value='1' " . ($row['strg_location'] == 'Storage A' ? 'selected' : '') . ">Storage A</option>
                         <option value='2' " . ($row['strg_location'] == 'Storage B' ? 'selected' : '') . ">Storage B</option>
                         <option value='3' " . ($row['strg_location'] == 'Storage C' ? 'selected' : '') . ">Storage C</option>
                     </select>
                 </td>
-                <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='num_stck'>" . $row["num_stck"] . "</td>
+                <td contenteditable='true' class='editable' data-id='" . $row['stck_id'] . "' data-column='num_stck'>" . $row["num_stck"] . "</td>
                 <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='size'>" . $row["size"] . "</td>
-                <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='date_delivered'>" . $row["date_delivered"] . "</td>
+                <td>
+                    <input type='date' class='editable' data-id='" . $row['product_id'] . "' data-column='date_delivered' value='" . $row['date_delivered'] . "' />
+                </td>
                 <td>" . $remarks . "</td>
                 <td>
                     <a href='delete.php?id={$row['product_id']}' class='btn btn-delete' onclick='return confirm(\"Are you sure you want to delete this?\")'>Delete</a>
@@ -77,4 +81,5 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="tablescript.js"></script>
