@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 include 'db_connect.php';
 
@@ -69,7 +70,7 @@ if ($result->num_rows > 0) {
                 </td>
                 <td>" . $remarks . "</td>
                 <td>
-                    <a href='delete.php?id={$row['product_id']}' class='btn btn-delete' onclick='return confirm(\"Are you sure you want to delete this?\")'>Delete</a>
+                    <a href='delete.php?id={$row['product_id']}' class='btn btn-delete'>Delete</a>
                 </td>
             </tr>";
     }

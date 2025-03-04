@@ -165,3 +165,53 @@ $(document).on('change', '.editable[data-column="date_delivered"]', function () 
         }
     });
 });
+// Delete
+$(document).off('click', '.btn-delete').on('click', '.btn-delete', function (e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    var row = $(this).closest('tr');
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function (response) {
+                    console.log("Server Response: " + response);
+                    if (response.trim().toLowerCase() === "success") {
+                        Swal.fire(
+                            "Deleted!",
+                            "Your data has been deleted.",
+                            "success"
+                        ).then(() => {
+                            row.fadeOut(400, function () {
+                                $(this).remove();
+                            });
+                        });
+                    } else {
+                        Swal.fire(
+                            "Failed!",
+                            "Your data was not deleted.",
+                            "error"
+                        );
+                    }
+                },
+                error: function () {
+                    Swal.fire(
+                        "Oops!",
+                        "Something went wrong!",
+                        "error"
+                    );
+                }
+            });
+        }
+    });
+});
