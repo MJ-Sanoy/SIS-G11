@@ -33,3 +33,7 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+
+<script>
+    window.location.href = "table.php";
+</script>

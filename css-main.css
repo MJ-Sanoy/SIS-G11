@@ -7,14 +7,14 @@
 
 body{
     background-color: #1F1C2C;
-    color: #928DAB;
+    color: #928dab;
 } 
 
 .row {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 60px;
+    gap: 20px;
     padding: 20px;
     width: 100%;
     height: 100vh; 
@@ -22,15 +22,14 @@ body{
 
 .column-form {
     width: 40%;
-    background-color: #222;
+    background-color: #373543;
     padding: 20px;
     border-radius: 10px;
     color: #E6EBE4;
     -webkit-box-shadow: 0px 0px 30px 14px #000000; 
     box-shadow: 0px 0px 30px 14px #000000;
     margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 10px;
+    margin-bottom: auto;    
 }
 
 form {
@@ -86,6 +85,29 @@ input, select {
     box-shadow: 0px 0px 30px 14px #000000;
 }
 
+.column-form input[type="text"],
+.column-form input[type="number"],
+.column-form input[type="date"],
+.column-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+}
+
+.column-form .submit-button input[type="submit"] {
+    background-color: #b490e6; 
+    color: white; 
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
 .column-table table {
     width: 100%;
     border-collapse: collapse;
@@ -100,4 +122,50 @@ input, select {
     text-align: center;
     margin-bottom: 20px;
     color: #E6EBE4;
+}
+
+.insert-form {
+    width: 80%;
+    margin-left: 175px;
+}
+
+.insert-form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.insert-form td {
+    padding: 10px;
+}
+
+.insert-form input[type="text"],
+.insert-form input[type="number"],
+.insert-form input[type="date"],
+.insert-form select {
+    width: 80%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333; /* Black background */
+    color: #fff; /* White text color */
+}
+
+.insert-form button[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.insert-form button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.table {
+    margin-bottom: 50px; /* Adjust this value as needed */
+    padding-bottom: 50px; /* Adjust this value as needed */
 }

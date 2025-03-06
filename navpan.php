@@ -7,6 +7,12 @@
         <a href="index.php">Home</a>
     </div>
     <div class="links" id="viewtable">
+        <a href="classification.php">Classification</a>
+    </div>
+    <div class="links" id="viewtable">
+        <a href="storage.php">Storage</a>
+    </div>
+    <div class="links" id="viewtable">
         <a href="table.php">View Table</a>
     </div>
 </div>

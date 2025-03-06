@@ -2,6 +2,28 @@
 <?php
 include 'db_connect.php';
 
+// Fetch classifications from the 'c' table
+$classifications = [];
+$classification_sql = "SELECT classification_id, c_name FROM c";
+$classification_result = $conn->query($classification_sql);
+
+if ($classification_result->num_rows > 0) {
+    while ($classification_row = $classification_result->fetch_assoc()) {
+        $classifications[] = $classification_row;
+    }
+}
+
+// Fetch storage locations from the 'strg' table
+$storage_locations = [];
+$storage_sql = "SELECT storage_id, strg_location FROM strg";
+$storage_result = $conn->query($storage_sql);
+
+if ($storage_result->num_rows > 0) {
+    while ($storage_row = $storage_result->fetch_assoc()) {
+        $storage_locations[] = $storage_row;
+    }
+}
+
 $sql = "SELECT 
             p.product_id,
             stck.stck_id,
@@ -43,25 +65,20 @@ if ($result->num_rows > 0) {
                 <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='name'>" . $row["product_name"] . "</td>
                 <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='p_desc'>" . $row["p_desc"] . "</td>
                 <td>
-                    <select class='editable-dropdown' data-id='" . $row['product_id'] . "' data-column='classification_id'>
-                        <option value='1' " . ($row['classification'] == 'Chips' ? 'selected' : '') . ">Chips</option>
-                        <option value='2' " . ($row['classification'] == 'Candies' ? 'selected' : '') . ">Candies</option>
-                        <option value='3' " . ($row['classification'] == 'Drinks' ? 'selected' : '') . ">Drinks</option>
-                        <option value='4' " . ($row['classification'] == 'Snacks' ? 'selected' : '') . ">Snacks</option>
-                        <option value='5' " . ($row['classification'] == 'Noodles' ? 'selected' : '') . ">Noodles</option>
-                        <option value='6' " . ($row['classification'] == 'Canned Goods' ? 'selected' : '') . ">Canned Goods</option>
-                        <option value='7' " . ($row['classification'] == 'Condiments' ? 'selected' : '') . ">Condiments</option>
-                        <option value='8' " . ($row['classification'] == 'Baking' ? 'selected' : '') . ">Baking</option>
-                        <option value='9' " . ($row['classification'] == 'Spreads' ? 'selected' : '') . ">Spreads</option>
-                        <option value='10' " . ($row['classification'] == 'Sauces' ? 'selected' : '') . ">Sauces</option>
-                    </select>
+                    <select class='editable-dropdown' data-id='" . $row['product_id'] . "' data-column='classification_id'>";
+                        foreach ($classifications as $classification) {
+                            $selected = ($row['classification'] == $classification['c_name']) ? 'selected' : '';
+                            echo "<option value='" . $classification['classification_id'] . "' $selected>" . $classification['c_name'] . "</option>";
+                        }
+        echo        "</select>
                 </td>
                 <td>
-                    <select class='editable-dropdown' data-id='" . $row['stck_id'] . "' data-column='storage_id'>
-                        <option value='1' " . ($row['strg_location'] == 'Storage A' ? 'selected' : '') . ">Storage A</option>
-                        <option value='2' " . ($row['strg_location'] == 'Storage B' ? 'selected' : '') . ">Storage B</option>
-                        <option value='3' " . ($row['strg_location'] == 'Storage C' ? 'selected' : '') . ">Storage C</option>
-                    </select>
+                    <select class='editable-dropdown' data-id='" . $row['stck_id'] . "' data-column='storage_id'>";
+                        foreach ($storage_locations as $storage) {
+                            $selected = ($row['strg_location'] == $storage['strg_location']) ? 'selected' : '';
+                            echo "<option value='" . $storage['storage_id'] . "' $selected>" . $storage['strg_location'] . "</option>";
+                        }
+        echo        "</select>
                 </td>
                 <td contenteditable='true' class='editable' data-id='" . $row['stck_id'] . "' data-column='num_stck'>" . $row["num_stck"] . "</td>
                 <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='size'>" . $row["size"] . "</td>
