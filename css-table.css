@@ -68,3 +68,76 @@ a{
     background-color: #333; 
     color: #FFFFFF; 
 }
+
+/* New CSS */
+.swal2-dark-warning-icon .swal2-icon.swal2-warning{
+    color: #420e78;
+}
+
+.swal2-gray-popup {
+    background-color: #333 !important;
+    color: white !important;
+}
+
+.table-container {
+    position: relative;
+    width: 50%;
+    margin: 20px auto;
+    margin-bottom: 100px;
+}
+
+#addClassificationForm {
+    margin-bottom: 20px;
+}
+
+#addClassificationForm input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#addClassificationForm button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#addClassificationForm button:hover {
+    background-color: #45a049;
+}
+
+#classificationTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#classificationTable th, #classificationTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.editable {
+    background-color: #333;
+    color: white;
+}
+
+.delete-button {
+    padding: 5px 10px;
+    background-color: #9955e1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto; 
+}
+
+.delete-button:hover {
+    background-color: #420e78;
+}
