@@ -44,7 +44,7 @@ $sql = "SELECT
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table border='1'>
+    echo "<table id='dataTable' border='1'>
             <tr>
                 <th>Product ID</th>
                 <th>Product Name</th>

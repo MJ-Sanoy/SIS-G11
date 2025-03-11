@@ -1,39 +1,84 @@
 <?php
 include 'db_connect.php';
 
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $p_desc = $_POST['p_desc'];
-    $classification_id = $_POST['classification_id'];
-    $storage_id = $_POST['storage_id'];
-    $num_stck = $_POST['num_stck'];
-    $size = $_POST['size'];
-    $date_delivered = $_POST['date_delivered'];
+header('Content-Type: application/json'); // Ensure JSON response
+error_reporting(0); // Suppress PHP warnings from being sent as output
+ob_start(); // Start output buffering
 
-    $insert_product = "INSERT INTO p (name, p_desc, classification_id, size) VALUES ('$name', '$p_desc', '$classification_id', '$size')";
-    if ($conn->query($insert_product) === TRUE) {
-        $last_id = $conn->insert_id;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'] ?? '';
+    $p_desc = $_POST['p_desc'] ?? '';
+    $classification_id = $_POST['classification_id'] ?? '';
+    $storage_id = $_POST['storage_id'] ?? '';
+    $num_stck = $_POST['num_stck'] ?? '';
+    $size = $_POST['size'] ?? '';
+    $date_delivered = $_POST['date_delivered'] ?? '';
 
-        $insert_date = "INSERT INTO d (date_delivered) VALUES ('$date_delivered')";
-        $conn->query($insert_date);
-        $date_id = $conn->insert_id;
+    if (empty($name) || empty($p_desc) || empty($classification_id) || empty($storage_id) || empty($num_stck) || empty($size) || empty($date_delivered)) {
+        echo json_encode(["error" => "All fields are required."]);
+        exit;
+    }
 
-        $insert_stock = "INSERT INTO stck (product_id, num_stck, storage_id, date_id) VALUES ('$last_id', '$num_stck', '$storage_id', '$date_id')";
-        $conn->query($insert_stock);
+    $stmt = $conn->prepare("INSERT INTO p (name, p_desc, classification_id, size) VALUES (?, ?, ?, ?)");
+    if ($stmt) {
+        $stmt->bind_param("ssis", $name, $p_desc, $classification_id, $size);
+        if ($stmt->execute()) {
+            $last_id = $stmt->insert_id;
 
-        echo "<script>
-                Swal.fire('Success!', 'Product Inserted Successfully!', 'success').then(() => {
-                    window.location.href = window.location.href;
-                });
-              </script>";
+            // Insert date_delivered into d table
+            $stmt = $conn->prepare("INSERT INTO d (date_delivered) VALUES (?)");
+            $stmt->bind_param("s", $date_delivered);
+            $stmt->execute();
+            $date_id = $stmt->insert_id;
+
+            // Insert storage_id, num_stck, and date_id into stck
+            $stmt = $conn->prepare("INSERT INTO stck (product_id, storage_id, num_stck, date_id) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("iiii", $last_id, $storage_id, $num_stck, $date_id);
+            $stmt->execute();
+
+            // Get classification and storage names
+            $classification_name = getClassificationName($classification_id, $conn);
+            $storage_location = getStorageLocation($storage_id, $conn);
+
+            // Clean output buffer to remove unwanted output
+            ob_end_clean();
+
+            echo json_encode([
+                "id" => $last_id,
+                "name" => $name,
+                "p_desc" => $p_desc,
+                "classification_name" => $classification_name,
+                "storage_location" => $storage_location,
+                "num_stck" => $num_stck,
+                "size" => $size,
+                "date_delivered" => $date_delivered
+            ]);
+        } else {
+            ob_end_clean();
+            echo json_encode(["error" => "Database error: " . $stmt->error]);
+        }
+        $stmt->close();
     } else {
-        echo "<script>
-                Swal.fire('Error!', 'Failed to Insert Product!', 'error');
-              </script>";
+        ob_end_clean();
+        echo json_encode(["error" => "Failed to prepare statement."]);
     }
 }
-?>
 
-<script>
-    window.location.href = "table.php";
-</script>
+function getClassificationName($id, $conn) {
+    $query = $conn->prepare("SELECT c_name FROM c WHERE classification_id = ?");
+    $query->bind_param("i", $id);
+    $query->execute();
+    $result = $query->get_result();
+    $row = $result->fetch_assoc();
+    return $row['c_name'] ?? 'Unknown';
+}
+
+function getStorageLocation($id, $conn) {
+    $query = $conn->prepare("SELECT strg_location FROM strg WHERE storage_id = ?");
+    $query->bind_param("i", $id);
+    $query->execute();
+    $result = $query->get_result();
+    $row = $result->fetch_assoc();
+    return $row['strg_location'] ?? 'Unknown';
+}
+?>

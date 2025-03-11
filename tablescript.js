@@ -178,7 +178,10 @@ $(document).off('click', '.btn-delete').on('click', '.btn-delete', function (e) 
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonText: "Yes, delete it!",
+        customClass: {
+            popup: 'gray-background' // Apply the gray-background class
+        }
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
@@ -187,29 +190,38 @@ $(document).off('click', '.btn-delete').on('click', '.btn-delete', function (e) 
                 success: function (response) {
                     console.log("Server Response: " + response);
                     if (response.trim().toLowerCase() === "success") {
-                        Swal.fire(
-                            "Deleted!",
-                            "Your data has been deleted.",
-                            "success"
-                        ).then(() => {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your data has been deleted.",
+                            icon: "success",
+                            customClass: {
+                                popup: 'gray-background' // Apply the gray-background class
+                            }
+                        }).then(() => {
                             row.fadeOut(400, function () {
                                 $(this).remove();
                             });
                         });
                     } else {
-                        Swal.fire(
-                            "Failed!",
-                            "Your data was not deleted.",
-                            "error"
-                        );
+                        Swal.fire({
+                            title: "Failed!",
+                            text: "Your data was not deleted.",
+                            icon: "error",
+                            customClass: {
+                                popup: 'gray-background' // Apply the gray-background class
+                            }
+                        });
                     }
                 },
                 error: function () {
-                    Swal.fire(
-                        "Oops!",
-                        "Something went wrong!",
-                        "error"
-                    );
+                    Swal.fire({
+                        title: "Oops!",
+                        text: "Something went wrong!",
+                        icon: "error",
+                        customClass: {
+                            popup: 'gray-background' // Apply the gray-background class
+                        }
+                    });
                 }
             });
         }
