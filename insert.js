@@ -45,20 +45,36 @@ $(document).ready(function() {
                             title: 'Added!',
                             text: 'The data has been added.',
                             icon: 'success',
-                            customClass: {
-                                popup: 'gray-background'
-                            }
+                            background: "#222",
+                            color: "#fff",
+                            confirmButtonColor: "#9b59b6"
                         }).then(() => {
                             $('.table').load('table_sql.php', function() {
-                                var newElement = $('#dataTable tbody tr:last');
-                                if (newElement.length) {
+                                var newRow = $('#dataTable tbody tr:last');
+
+                                if (newRow.length) {
+                                    // Smooth fade-in effect
+                                    newRow.css({
+                                        "opacity": "0",
+                                        "transition": "opacity 1.5s ease-in-out"
+                                    });
+
+                                    setTimeout(() => {
+                                        newRow.css("opacity", "1"); // Smooth fade-in
+                                    }, 100);
+
                                     $('html, body').animate({
-                                        scrollTop: newElement.offset().top
+                                        scrollTop: newRow.offset().top
                                     }, 1000, function() {
-                                        newElement.css({'border': '3px solid green', 'transition': 'border 0.5s'});
-                                        setTimeout(function() {
-                                            newElement.css({'border': 'none'});
-                                        }, 2000);
+                                        // Apply a subtle glow effect without changing the border thickness
+                                        newRow.css({
+                                            "box-shadow": "0px 0px 10px 4px #b56cd9", 
+                                            "transition": "box-shadow 2s ease-in-out"
+                                        });
+
+                                        setTimeout(() => {
+                                            newRow.css("box-shadow", "none"); // Remove glow effect after 3s
+                                        }, 3000);
                                     });
                                 }
                             });

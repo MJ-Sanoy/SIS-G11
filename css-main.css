@@ -147,33 +147,53 @@ input, select {
     margin-top: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    background-color: #333; /* Black background */
-    color: #fff; /* White text color */
+    background-color: #333; 
+    color: #fff; 
 }
 
 .insert-form button[type="submit"] {
-    background-color: #4CAF50; /* Green background */
-    color: white; /* White text */
+    background-color: #4CAF50;
+    color: white;
     font-weight: bold;
     cursor: pointer;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+    transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .insert-form button[type="submit"]:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #d98b0d;
 }
 
 .table {
-    margin-bottom: 50px; /* Adjust this value as needed */
-    padding-bottom: 50px; /* Adjust this value as needed */
+    margin-bottom: 50px;
+    padding-bottom: 50px; 
 }
 
-/* Custom class for gray background */
 .gray-background {
-    background-color: #333; /* Gray background color */
-    color: white; /* Ensure text is visible */
-    padding: 10px; /* Optional: Add some padding */
-    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #333;
+    color: white; 
+    padding: 10px;
+    border-radius: 5px; 
 }
+
+/* Fade-in effect */
+.new-row {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* Glow effect for the new row */
+@keyframes glowFade {
+    0% { box-shadow: 0 0 12px 3px rgba(181, 108, 217, 1); }
+    50% { box-shadow: 0 0 20px 5px rgba(181, 108, 217, 0.7); }
+    100% { box-shadow: 0 0 0px 0px rgba(181, 108, 217, 0); }
+}
+
+.glow-effect td {
+    animation: glowFade 3s ease-in-out;
+    border-radius: 5px; /* Optional: Soft rounded corners */
+}
+
+

@@ -61,7 +61,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $remarks = ($row['num_stck'] == 0) ? 'No available stock' : (($row['num_stck'] <= 32) ? 'Low stock' : 'In stock');
         echo "<tr>
-                <td>" . $row["product_id"] . "</td>
+                <td style='font-weight: bold;'>" . $row["product_id"] . "</td>
                 <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='name'>" . $row["product_name"] . "</td>
                 <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='p_desc'>" . $row["p_desc"] . "</td>
                 <td>
@@ -85,7 +85,7 @@ if ($result->num_rows > 0) {
                 <td>
                     <input type='date' class='editable' data-id='" . $row['product_id'] . "' data-column='date_delivered' value='" . $row['date_delivered'] . "' />
                 </td>
-                <td>" . $remarks . "</td>
+                <td style='font-weight: bold;'>" . $remarks . "</td>
                 <td>
                     <a href='delete.php?id={$row['product_id']}' class='btn btn-delete'>Delete</a>
                 </td>
