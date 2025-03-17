@@ -1,0 +1,81 @@
+.box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #333; 
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 350px; 
+    height: 250px; 
+    color: white; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    border-radius: 20px;
+}
+
+.box:hover {
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.box a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.box h2 {
+    margin: 0 0 5px;
+    font-size: 75px;
+}
+
+.box p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10px; 
+    width: 100%;
+    min-height: 100vh;
+    margin-top: -100px;
+}
+
+.box-container .row-front1,
+.box-container .row-front2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    max-width: 1200px; 
+}
+
+.box-container .row-front1 .box,
+.box-container .row-front2 .box {
+    margin: 10px;
+    min-width: 350px; 
+    max-width: 500px;
+}
+
+.box-container .row-front2:last-child {
+    margin-bottom: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}

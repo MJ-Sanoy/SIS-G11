@@ -6,8 +6,8 @@
 <div class='table-container'>
     <style>
         #storage a{
-            color: #1F1C2C;
-            background-color: goldenrod;
+            color:rgb(255, 255, 255);
+            background-color: #1F1C2C;
         }
     </style>
     <form id='addStorageForm' method='POST'>

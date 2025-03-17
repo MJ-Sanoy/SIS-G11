@@ -5,8 +5,8 @@
 <div class="nav"><?php include 'navpan.php';?></div>
     <style>
         #classification a{
-            color: #1F1C2C;
-            background-color: goldenrod;
+            color:rgb(255, 255, 255);
+            background-color: #1F1C2C;
         }
     </style>
         <div class='table-container'>

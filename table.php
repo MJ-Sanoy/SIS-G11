@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="css-table.css">
     <style>
         #viewtable a{
-            color: #1F1C2C;
-            background-color: goldenrod;
+            color:rgb(255, 255, 255);
+            background-color: #1F1C2C;
         }
     </style>
 <div class="nav"><?php include 'navpan.php'; ?></div>
