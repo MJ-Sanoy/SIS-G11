@@ -28,7 +28,14 @@ if ($storage_result->num_rows > 0) {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <div class="nav"><?php include 'navpan.php'?></div>
 <link rel="stylesheet" href="css-table.css">
+<link rel="stylesheet" href="css-main-Home.css">
 <link rel="stylesheet" href="css-main.css">
+<style>
+    #landingpage a{
+        color: #1F1C2C;
+        background-color: goldenrod;
+    }
+</style>
 <div class="row">
     <div class="column-form">
         <form action="insert-front.php" method="POST">

@@ -3,6 +3,12 @@
 <link rel="stylesheet" href="css-classification.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 <div class="nav"><?php include 'navpan.php';?></div>
+    <style>
+        #classification a{
+            color: #1F1C2C;
+            background-color: goldenrod;
+        }
+    </style>
         <div class='table-container'>
         <form id='addClassificationForm' method='POST'>
             <input type='text' name='new_classification' id='new_classification' placeholder='New Classification' required>

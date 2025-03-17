@@ -1,61 +1,53 @@
 .nav {
     background-color: #928DAB;
     display: flex;
-    padding: 7px;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between; /* Ensures space between welcome and links */
+    padding: 10px 20px;
     font-family: 'Lato', sans-serif;
 }
 
-.links a {
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 20px 20px;
-    transition: background 0.3s;
-    font-family: 'Lato', sans-serif;
-    text-align: left;
-}
-
-.links a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(2);
-    color: #796EAB; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-}
-
+/* Welcome section styling */
 .welcome {
     text-align: center;
-    padding: 10px;
+    margin-right: 20px;
+    margin-left: 0px;
+    padding: 10px 20px;
     background-color: #444;
     color: #FFFFFF; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    position: relative;
-    animation: lightCircle 5s infinite; 
+    animation: lightCircle 5s infinite;
 }
 
 .welcome h1 {
     font-size: 36px;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 0;
 }
 
-@keyframes lightCircle {
-    0% {
-        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-    }
-    25% {
-        box-shadow: 10px 0 10px 5px rgba(255, 255, 255, 0.5);
-    }
-    50% {
-        box-shadow: 0 10px 10px 5px rgba(255, 255, 255, 0.5);
-    }
-    75% {
-        box-shadow: -10px 0 10px 5px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-    }
+.links {
+    display: flex;
+    gap: 10px; 
 }
+
+.links a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-family: 'Lato', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+

@@ -2,10 +2,14 @@
 <link rel="stylesheet" href="css-table.css">
 <link rel="stylesheet" href="css-storage.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-
 <div class="nav"><?php include 'navpan.php';?></div>
-
 <div class='table-container'>
+    <style>
+        #storage a{
+            color: #1F1C2C;
+            background-color: goldenrod;
+        }
+    </style>
     <form id='addStorageForm' method='POST'>
         <input type='text' name='new_storage' id='new_storage' placeholder='New Storage Location' required>
         <button type='submit'>ADD</button>
