@@ -2,16 +2,15 @@
     background-color: #928DAB;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures space between welcome and links */
+    justify-content: space-between;
     padding: 10px 20px;
     font-family: 'Lato', sans-serif;
 }
 
-/* Welcome section styling */
 .welcome {
     text-align: center;
     margin-right: 20px;
-    margin-left: 0px;
+    margin-left: -20px;
     padding: 10px 20px;
     background-color: #444;
     color: #FFFFFF; 
