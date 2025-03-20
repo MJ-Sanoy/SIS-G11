@@ -1,0 +1,105 @@
+.product-table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 50px auto;
+    color: white;
+    margin-bottom: 100px;
+}
+
+.table-header {
+    background-color: #928DAB;
+    color: #E6EBE4;
+}
+
+.table-heading {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.table-row {
+    background-color: #333;
+}
+
+.table-row:nth-child(even) {
+    background-color: #444;
+}
+
+.table-row:hover {
+    background-color: #555;
+}
+
+.table-cell {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.no-records {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    border: none;
+}
+
+.btn-delete {
+    background-color: #8e43d9;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #5e24a9c8;
+}
+
+.editable-dropdown {
+    background-color: #444;
+    color: #FFFFFF;
+    border: 1px solid #555;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.editable-dropdown option {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.editable {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.swal2-dark-warning-icon .swal2-icon.swal2-warning {
+    color: #420e78;
+}
+
+.swal2-gray-popup {
+    background-color: #333 !important;
+    color: white !important;
+}
+
+.table-container {
+    position: relative;
+    width: 50%;
+    margin: 20px auto;
+    margin-bottom: 100px;
+}
+
+.gray-background {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
