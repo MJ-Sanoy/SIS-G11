@@ -1,7 +1,9 @@
 .box-container {
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
+    margin-top: 80px;
 }
+
 
 @keyframes fadeIn {
     from {
@@ -35,7 +37,7 @@
     transform: scale(1.1);
 }
 
-.box a {
+#query  {
     text-decoration: none;
     color: white;
     display: flex;
@@ -96,10 +98,4 @@
 
 .box-container .row-front2:last-child {
     margin-bottom: 0;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
 }

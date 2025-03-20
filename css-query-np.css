@@ -1,3 +1,4 @@
+/* Fade-in Animation */
 .query, .previous, .next {
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
@@ -12,42 +13,44 @@
     }
 }
 
-.Ptitle{
+/* Page Title */
+.Ptitle {
     font-size: 40px;
     font-weight: bolder;
 }
-.previous{
-    float: left;
-    margin-left: 30px;
+
+/* Navigation Container */
+.next-previous {
+    display: flex;
+    justify-content: space-between;  /* Ensures Previous & Next are properly spaced */
+    align-items: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto; /* Centers it */
 }
-.next{
-    float: right;
-    margin-right: 30px;
-}
+
+/* Navigation Buttons */
 .previous, .next {
-    font-size: 20px;    
+    font-size: 20px;
     font-weight: bolder;
-    position: relative;
-    margin-top: 20px;
     text-shadow: 0 0px 5px #9f4bd4;
 }
+
 .previous a, .next a {
     text-decoration: none;
     transition: color 0.2s, font-size 0.2s;
 }
-.next a{
+
+/* Button Colors */
+.next a {
     color: #a2e0a2;
 }
-.previous a{
+
+.previous a {
     color: #e0a2a2;
 }
 
-.next a:hover{
+/* Hover Effects */
+.next a:hover, .previous a:hover {
     color: #9f4bd4;
-    font-size: 25px;
 }
-.previous a:hover{
-    color: #9f4bd4;
-    font-size: 25px;
-}
-

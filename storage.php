@@ -5,9 +5,8 @@
 <div class="nav"><?php include 'navpan.php';?></div>
 <div class='table-container'>
     <style>
-        #storage a{
-            color:rgb(255, 255, 255);
-            background-color: #1F1C2C;
+        #storage{
+            background-color:rgba(76, 27, 101, 0.8);
         }
     </style>
     <form id='addStorageForm' method='POST'>

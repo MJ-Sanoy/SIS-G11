@@ -4,9 +4,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 <div class="nav"><?php include 'navpan.php';?></div>
     <style>
-        #classification a{
-            color:rgb(255, 255, 255);
-            background-color: #1F1C2C;
+        #classification{
+            background-color:rgba(76, 27, 101, 0.8);
         }
     </style>
         <div class='table-container'>
