@@ -1,9 +1,9 @@
+/* Base Styles */
 .box-container {
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
     margin-top: 80px;
 }
-
 
 @keyframes fadeIn {
     from {
@@ -18,14 +18,14 @@
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
-    background-color: #333; 
+    background-color: #333;
     transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-    width: 350px; 
-    height: 250px; 
-    color: white; 
-    display: flex; 
+    width: 350px;
+    height: 250px;
+    color: white;
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     border-radius: 20px;
     box-shadow: #ffffff 0px 0px 10px;
@@ -37,12 +37,12 @@
     transform: scale(1.1);
 }
 
-#query  {
+#query {
     text-decoration: none;
     color: white;
     display: flex;
-    flex-direction: column; 
-    justify-content: center; 
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -62,7 +62,7 @@
     font-size: 15px;
 }
 
-.box:hover p{
+.box:hover p {
     color: #2c1c2c;
 }
 
@@ -72,7 +72,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    gap: 10px; 
+    gap: 10px;
     width: 100%;
     min-height: 100vh;
     margin-top: -100px;
@@ -86,16 +86,120 @@
     gap: 10px;
     width: 100%;
     flex-wrap: wrap;
-    max-width: 1200px; 
+    max-width: 1200px;
 }
 
 .box-container .row-front1 .box,
 .box-container .row-front2 .box {
     margin: 10px;
-    min-width: 350px; 
+    min-width: 350px;
     max-width: 500px;
 }
 
 .box-container .row-front2:last-child {
     margin-bottom: 0;
+}
+
+/* Media Queries */
+
+/* 320px - 480px: Small to medium smartphones */
+@media (max-width: 480px) {
+    .box {
+        width: 80%; /* Adjust box width for smaller screens */
+        height: 200px; /* Reduce height */
+        font-size: 14px;
+    }
+
+    .box h2 {
+        font-size: 50px; /* Smaller font size for headings */
+    }
+
+    .box p {
+        font-size: 15px; /* Smaller font size for paragraphs */
+    }
+
+    .box-container {
+        margin-top: 10px; /* Adjust margin for smaller screens */
+        margin-bottom: 100px;
+    }
+}
+
+/* 481px - 768px: Tablets and larger smartphones */
+@media (min-width: 481px) and (max-width: 768px) {
+    .box {
+        width: 45%; /* Adjust box width for tablets */
+        height: 220px; /* Slightly larger height */
+    }
+
+    .box h2 {
+        font-size: 28px; /* Adjust heading size */
+    }
+
+    .box p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
+
+    .box-container {
+        margin-top: 40px; /* Adjust margin for tablets */
+    }
+}
+
+/* 769px - 1024px: Small laptops and some tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .box {
+        width: 30%; /* Adjust box width for small laptops */
+        height: 240px; /* Slightly larger height */
+    }
+
+    .box h2 {
+        font-size: 32px; /* Adjust heading size */
+    }
+
+    .box p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
+
+    .box-container {
+        margin-top: 60px; /* Adjust margin for small laptops */
+    }
+}
+
+/* 1025px - 1200px: Desktops and larger laptops */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .box {
+        width: 25%; /* Adjust box width for desktops */
+        height: 250px; /* Standard height */
+    }
+
+    .box h2 {
+        font-size: 36px; /* Adjust heading size */
+    }
+
+    .box p {
+        font-size: 15px; /* Standard paragraph size */
+    }
+
+    .box-container {
+        margin-top: 80px; /* Adjust margin for desktops */
+    }
+}
+
+/* 1201px and more: Extra large screens and TVs */
+@media (min-width: 1201px) {
+    .box {
+        width: 20%; /* Adjust box width for extra large screens */
+        height: 300px; /* Larger height */
+    }
+
+    .box h2 {
+        font-size: 40px; /* Larger heading size */
+    }
+
+    .box p {
+        font-size: 16px; /* Larger paragraph size */
+    }
+
+    .box-container {
+        margin-top: 100px; /* Adjust margin for extra large screens */
+    }
 }
