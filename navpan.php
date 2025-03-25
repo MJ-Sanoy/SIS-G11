@@ -18,7 +18,7 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            transition: all 0.3s ease-in-out; /* Add transition for smooth changes */
+            transition: all 0.3s ease-in-out;
         }
 
         .welcome {
@@ -28,7 +28,6 @@
             color: #FFFFFF; 
             border-radius: 10px; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
         }
 
         .welcome h1 {
@@ -39,7 +38,6 @@
         .links {
             display: flex;
             gap: 15px;
-            animation: slideIn 0.5s ease-in-out; /* Add slide-in animation */
         }
 
         .links a {
@@ -55,27 +53,6 @@
 
         .links a:hover {
             background: rgb(75, 43, 128);
-        }
-
-        /* Keyframes for animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         /* Small to Medium Smartphones (320px - 480px) */
@@ -256,6 +233,11 @@
                 font-size: 22px;
                 padding: 14px 24px;
                 background: rgba(48, 18, 84, 0.24);
+                transition: all 0.3s ease-in-out;
+            }
+
+            .links a:hover {
+                scale: 1.1;
             }
         }
     </style>

@@ -1,13 +1,22 @@
 <meta charset="UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="ticker.js"></script>
+<link rel="stylesheet" href="css-ticker.css">
+<link rel="stylesheet" href="css-main.css">
+<link rel="stylesheet" href="css-index.css">
 <style>
     #home{
         background-color:rgba(76, 27, 101, 0.8);
     }
 </style>
 <div class="nav"><?php include 'navpan.php'?></div>
-<link rel="stylesheet" href="css-main.css">
-<link rel="stylesheet" href="css-index.css">
+
+<div class="ticker">
+    <div class="ticker-content">
+        <span>Click the queriessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</span>
+    </div>
+</div>
+
 <div class="box-container">
     <div class="row-front1">
         <div class="box">

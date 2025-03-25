@@ -1,3 +1,4 @@
+<script src="table-sort.js"></script>
 <?php
 include 'db_connect.php';
 
