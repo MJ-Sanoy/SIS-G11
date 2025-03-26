@@ -6,7 +6,6 @@
 }
 
 .Ptitle:hover {
-    font-size: 50px;
     font-weight: bolder;
 }
 
@@ -43,5 +42,4 @@
 
 .next a:hover, .previous a:hover {
     color: #9f4bd4;
-    font-size: 30px;
 }

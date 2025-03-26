@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
                 <td class='table-cell'>{$row['Product_Name']}</td>
                 <td class='table-cell'>{$row['Description']}</td>
                 <td class='table-cell'>{$row['Classification']}</td>
-                <td class='table-cell'>{$row['Stock_Location']}</td>
+                <td class='table-cell' id='stock'>{$row['Stock_Location']}</td>
               </tr>";
     }
 

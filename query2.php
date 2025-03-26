@@ -4,14 +4,7 @@
 <link rel="stylesheet" href="css-table.css">
 <link rel="stylesheet" href="css-query-np.css">
 <link rel="stylesheet" href="css-query-table.css">
-<link rel="stylesheet" href="css-ticker.css">
 <div class="nav"><?php include 'navpan.php';?></div>
-
-<div class="ticker">
-    <div class="ticker-content">
-        <span>Click any of the header to change sort option: ASC/DESC</span>
-    </div>
-</div>
 
 <div class="next-previous">
         <div>

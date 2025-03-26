@@ -55,7 +55,7 @@ if ($storage_result && $storage_result->num_rows > 0) {
                     } ?>
                 </select>
             </td>
-            <td><input type="number" name="num_stck" required></td>
+            <td><input type="number" name="num_stck" min="0" required></td>
             <td><input type="text" name="size" required></td>
             <td><input type="date" name="date_delivered" required></td>
             <td><button type="submit" name="submit">Insert</button></td>
