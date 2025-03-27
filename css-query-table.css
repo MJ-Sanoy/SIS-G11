@@ -1,9 +1,23 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .product-table {
     width: 50%;
     border-collapse: collapse;
     margin: 50px auto;
     color: white;
     margin-bottom: 100px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.nav {
+    animation: none !important;
 }
 
 .table-header {

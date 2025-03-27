@@ -13,6 +13,7 @@
     align-items: center;
     border-radius: 20px;
     box-shadow: #ffffff 0px 0px 10px;
+    overflow: visible;
 }
 
 .box:hover {
@@ -126,63 +127,74 @@
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
+    html, body {
+        height: auto;
+        min-height: 100vh;
+    }
+    
     .box {
-        width: 45%;
-        height: 220px;
+        width: 80%;
+        height: 200px;
     }
 
     .box h2 {
-        font-size: 28px;
+        font-size: 65px;
     }
 
     .box p {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .box-container {
-        margin-top: 40px;
+        display: block;
+        min-height: 100vh;
+    }
+
+    .box-container .row-front1 {
+        margin-top: 0px;
+    }
+
+    .box-container .row-front2  {
+        position: relative;
+        padding-bottom: 100px;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .box {
-        width: 30%;
-        height: 240px;
+        width: 25%;
+        height: 200px;
     }
 
     .box h2 {
-        font-size: 32px;
+        font-size: 60px;
     }
 
     .box p {
         font-size: 14px;
     }
 
-    .box-container {
-        margin-top: 60px;
+    .box-container .row-front1 {
+        margin-top: -200px;
     }
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
     .box {
-        width: 25%;
-        height: 250px;
+        width: 30%;
+        height: 200px;
     }
 
     .box h2 {
-        font-size: 36px;
+        font-size: 60px;
     }
 
     .box p {
-        font-size: 15px;
-    }
-
-    .box-container {
-        margin-top: 80px;
+        font-size: 14px;
     }
 
     .box-container .row-front1 {
-        margin-top: -300px;
+        margin-top: -200px;
     }
 }
 

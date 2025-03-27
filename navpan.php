@@ -20,6 +20,10 @@
             transition: all 0.3s ease-in-out;
         }
 
+        .nav.no-animation {
+            animation: none;
+        }
+
         .welcome {
             text-align: center;
             padding: 10px 20px;

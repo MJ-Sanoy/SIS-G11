@@ -6,11 +6,11 @@
 <link rel="stylesheet" href="css-query-table.css">
 <div class="nav"><?php include 'navpan.php';?></div>
 
+<div class="Ptitle">QUERY 3</div>
 <div class="next-previous">
         <div>
             <div class="previous"><a href="query2.php">Previous</a></div>
         </div>
-            <div class="Ptitle">QUERY 3</div>
         <div>
             <div class="next"><a href="query4.php">Next Query</a></div>
         </div>

@@ -1,6 +1,7 @@
 <meta charset="UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="no-scroll.js"></script>
+<script src="restrict-animation.js"></script>
+<script src="table-sort.js"></script>
 <link rel="stylesheet" href="css-main.css">
 <link rel="stylesheet" href="css-index.css">
 <title>HOME - QUERIES</title>
