@@ -35,9 +35,9 @@
 }
 
 #addClassificationForm input[type="text"] {
-    background-color: #444; /* Dark gray background */
-    color: white; /* White text */
-    border: 1px solid #666; /* Slightly lighter gray border */
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
     padding: 8px;
     border-radius: 5px;
     outline: none;
@@ -73,7 +73,7 @@
     cursor: pointer;
     border-radius: 5px;
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto;
     transition: background-color 0.20s ease-out, transform 0.15s ease-out, font-size 0.15s ease-out;
 }
 

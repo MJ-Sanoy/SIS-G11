@@ -10,7 +10,7 @@ if (isset($_POST['id']) && $_POST['value'] !== "") {
     $stmt->bind_param("ii", $num_stck, $id);
 
     if ($stmt->execute()) {
-        echo "true"; // Only return true without any extra text
+        echo "true";
     } else {
         echo "false";
     }

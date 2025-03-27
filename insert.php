@@ -1,9 +1,9 @@
 <?php
 include 'db_connect.php';
 
-header('Content-Type: application/json'); // Ensure JSON response
-error_reporting(0); // Suppress PHP warnings from being sent as output
-ob_start(); // Start output buffering
+header('Content-Type: application/json');
+error_reporting(0);
+ob_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'] ?? '';
@@ -25,22 +25,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->execute()) {
             $last_id = $stmt->insert_id;
 
-            // Insert date_delivered into d table
             $stmt = $conn->prepare("INSERT INTO d (date_delivered) VALUES (?)");
             $stmt->bind_param("s", $date_delivered);
             $stmt->execute();
             $date_id = $stmt->insert_id;
 
-            // Insert storage_id, num_stck, and date_id into stck
             $stmt = $conn->prepare("INSERT INTO stck (product_id, storage_id, num_stck, date_id) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("iiii", $last_id, $storage_id, $num_stck, $date_id);
             $stmt->execute();
 
-            // Get classification and storage names
             $classification_name = getClassificationName($classification_id, $conn);
             $storage_location = getStorageLocation($storage_id, $conn);
 
-            // Clean output buffer to remove unwanted output
             ob_end_clean();
 
             echo json_encode([

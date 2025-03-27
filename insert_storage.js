@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Insert Storage Location
     $("#addStorageForm").submit(function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         let newStorage = $("#new_storage").val().trim();
 

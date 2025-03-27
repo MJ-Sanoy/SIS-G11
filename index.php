@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="css-index.css">
 <title>HOME - QUERIES</title>
 <style>
-    #home{
-        background-color:rgba(76, 27, 101, 0.8);
+    #home {
+        background-color: rgba(76, 27, 101, 0.8);
     }
     html, body {
         overflow: hidden;
@@ -14,7 +14,7 @@
     }
 </style>
 <div class="box-container">
-<div class="nav"><?php include 'navpan.php'?></div>
+<div class="nav"><?php include 'navpan.php' ?></div>
     <div class="row-front1">
         <div class="box">
             <a href="query1.php" id="query">

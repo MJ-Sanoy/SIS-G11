@@ -2,7 +2,6 @@
 <?php
 include 'db_connect.php';
 
-// Fetch classifications from the 'c' table
 $classifications = [];
 $classification_sql = "SELECT classification_id, c_name FROM c";
 $classification_result = $conn->query($classification_sql);
@@ -13,7 +12,6 @@ if ($classification_result->num_rows > 0) {
     }
 }
 
-// Fetch storage locations from the 'strg' table
 $storage_locations = [];
 $storage_sql = "SELECT storage_id, strg_location FROM strg";
 $storage_result = $conn->query($storage_sql);

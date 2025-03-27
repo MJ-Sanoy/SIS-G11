@@ -2,7 +2,7 @@
 include 'db_connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    header('Content-Type: application/json'); // Ensure JSON response
+    header('Content-Type: application/json');
 
     if (!isset($_POST['new_storage']) || empty(trim($_POST['new_storage']))) {
         echo json_encode(['error' => 'Storage location cannot be empty.']);
@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $new_storage = trim($_POST['new_storage']);
 
-    // Use prepared statement to prevent SQL injection
     $sql_insert = "INSERT INTO strg (strg_location) VALUES (?)";
     $stmt = $conn->prepare($sql_insert);
 
@@ -19,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("s", $new_storage);
 
         if ($stmt->execute()) {
-            echo json_encode(['id' => $stmt->insert_id]); // Return inserted ID
+            echo json_encode(['id' => $stmt->insert_id]);
         } else {
             echo json_encode(['error' => 'Error inserting data: ' . $stmt->error]);
         }

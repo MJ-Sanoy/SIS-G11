@@ -23,10 +23,8 @@
             </thead>
 <?php
 include 'db_connect.php';
-
 $sql = 'SELECT * FROM c ORDER BY classification_id';
 $result = $conn->query($sql);
-
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr data-id='" . $row['classification_id'] . "'>
@@ -38,13 +36,10 @@ if ($result->num_rows > 0) {
 } else {
     echo "<tr><td colspan='3'>No classifications found.</td></tr>";
 }
-
 echo "</tbody></table></div>";
-
 $conn->close();
 ?>
 <?php include 'footer.php';?>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="insert_classification.js"></script>

@@ -83,19 +83,19 @@
     margin-bottom: 0;
 }
 
-#remarks{
-    color: #928dab;;
+#remarks {
+    color: #928dab;
 }
 
-#no-stock{
+#no-stock {
     color: #ff7070;
 }
 
-#low-stock{
+#low-stock {
     color: #fffb82;
-}   
+}
 
-#in-stock{
+#in-stock {
     color: #a5ff82;
 }
 
@@ -103,112 +103,108 @@
     font-weight: normal;
     color: #2c1c2c;
 }
-/* Media Queries */
 
-/* 320px - 480px: Small to medium smartphones */
 @media (max-width: 480px) {
     .box {
-        width: 80%; /* Adjust box width for smaller screens */
-        height: 200px; /* Reduce height */
+        width: 80%;
+        height: 200px;
         font-size: 14px;
     }
 
     .box h2 {
-        font-size: 50px; /* Smaller font size for headings */
+        font-size: 50px;
     }
 
     .box p {
-        font-size: 15px; /* Smaller font size for paragraphs */
+        font-size: 15px;
     }
 
     .box-container {
-        margin-top: 10px; /* Adjust margin for smaller screens */
+        margin-top: 10px;
         margin-bottom: 100px;
     }
 }
 
-/* 481px - 768px: Tablets and larger smartphones */
 @media (min-width: 481px) and (max-width: 768px) {
     .box {
-        width: 45%; /* Adjust box width for tablets */
-        height: 220px; /* Slightly larger height */
+        width: 45%;
+        height: 220px;
     }
 
     .box h2 {
-        font-size: 28px; /* Adjust heading size */
+        font-size: 28px;
     }
 
     .box p {
-        font-size: 14px; /* Adjust paragraph size */
+        font-size: 14px;
     }
 
     .box-container {
-        margin-top: 40px; /* Adjust margin for tablets */
+        margin-top: 40px;
     }
 }
 
-/* 769px - 1024px: Small laptops and some tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
     .box {
-        width: 30%; /* Adjust box width for small laptops */
-        height: 240px; /* Slightly larger height */
+        width: 30%;
+        height: 240px;
     }
 
     .box h2 {
-        font-size: 32px; /* Adjust heading size */
+        font-size: 32px;
     }
 
     .box p {
-        font-size: 14px; /* Adjust paragraph size */
+        font-size: 14px;
     }
 
     .box-container {
-        margin-top: 60px; /* Adjust margin for small laptops */
+        margin-top: 60px;
     }
 }
 
-/* 1025px - 1200px: Desktops and larger laptops */
 @media (min-width: 1025px) and (max-width: 1200px) {
     .box {
-        width: 25%; /* Adjust box width for desktops */
-        height: 250px; /* Standard height */
+        width: 25%;
+        height: 250px;
     }
 
     .box h2 {
-        font-size: 36px; /* Adjust heading size */
+        font-size: 36px;
     }
 
     .box p {
-        font-size: 15px; /* Standard paragraph size */
+        font-size: 15px;
     }
 
     .box-container {
-        margin-top: 80px; /* Adjust margin for desktops */
+        margin-top: 80px;
     }
-    .box-container .row-front1{
+
+    .box-container .row-front1 {
         margin-top: -300px;
     }
 }
 
-/* 1201px and more: Extra large screens and TVs */
 @media (min-width: 1201px) {
     .box {
-        width: 20%; /* Adjust box width for extra large screens */
-        height: 300px; /* Larger height */
+        width: 20%;
+        height: 300px;
     }
 
     .box h2 {
-        font-size: 75px; /* Larger heading size */
+        font-size: 75px;
     }
 
     .box p {
-        font-size: 17px; /* Larger paragraph size */
+        font-size: 17px;
     }
 
     .box-container {
-        margin-top: 100px; /* Adjust margin for extra large screens */
+        margin-top: 100px;
     }
-    .box-container .row-front1{
+
+    .box-container .row-front1 {
         margin-top: -375px;
     }
 }

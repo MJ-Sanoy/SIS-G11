@@ -95,8 +95,8 @@ input, select {
     margin-top: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    background-color: #333; /* Dark background color */
-    color: #fff; /* White text color */
+    background-color: #333; 
+    color: #fff; 
 }
 
 .column-form .submit-button input[type="submit"] {
@@ -185,7 +185,6 @@ input, select {
     transition: opacity 1.5s ease-in-out;
 }
 
-/* Glow effect for the new row */
 @keyframes glowFade {
     0% { box-shadow: 0 0 12px 3px rgba(181, 108, 217, 1); }
     50% { box-shadow: 0 0 20px 5px rgba(181, 108, 217, 0.7); }
@@ -194,7 +193,7 @@ input, select {
 
 .glow-effect td {
     animation: glowFade 3s ease-in-out;
-    border-radius: 5px; /* Optional: Soft rounded corners */
+    border-radius: 5px;
 }
 
 

@@ -1,7 +1,6 @@
 $(document).ready(function () {
-    // Insert Classification
     $("#addClassificationForm").submit(function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         let newClassification = $("#new_classification").val().trim();
 
@@ -55,15 +54,12 @@ $(document).ready(function () {
 
                             $("#classificationTable tbody").append(newRow);
 
-                            // Slow fade-in effect
                             newRow.fadeIn(1000);
 
-                            // Smooth scroll to new row
                             $('html, body').animate({
                                 scrollTop: newRow.offset().top
                             }, 800);
 
-                            // Add glowing effect
                             newRow.css({
                                 "box-shadow": "0px 0px 10px 2px #b56cd9",
                                 "transition": "box-shadow 2s ease-in-out"
@@ -71,9 +67,9 @@ $(document).ready(function () {
 
                             setTimeout(() => {
                                 newRow.css("box-shadow", "0px 0px 0px 0px");
-                            }, 3000); // Glow fades out in 3 seconds
+                            }, 3000);
 
-                            $("#new_classification").val(""); // Clear input field
+                            $("#new_classification").val("");
                         } else {
                             Swal.fire({
                                 title: "Error",
@@ -100,7 +96,6 @@ $(document).ready(function () {
         });
     });
 
-    // Edit Classification Name
     $(document).on("blur", ".editable", function () {
         let id = $(this).closest("tr").data("id");
         let column = $(this).data("column");
@@ -116,7 +111,6 @@ $(document).ready(function () {
         });
     });
 
-    // Delete Classification
     $(document).on("click", ".delete-button", function () {
         let id = $(this).data("id");
         let row = $(this).closest("tr");

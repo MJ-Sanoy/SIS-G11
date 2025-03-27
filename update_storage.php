@@ -4,7 +4,6 @@ include 'db_connect.php';
 function updateStorage($id, $value) {
     global $conn;
 
-    // Use stck_id instead of product_id
     $stmt = $conn->prepare("UPDATE stck SET storage_id = ? WHERE stck_id = ?");
     if (!$stmt) {
         echo "Failed to prepare statement: " . $conn->error;
@@ -22,7 +21,7 @@ function updateStorage($id, $value) {
 }
 
 if (isset($_POST['id'], $_POST['value'])) {
-    $id = intval($_POST['id']); // This should be the stck_id
+    $id = intval($_POST['id']);
     $value = intval($_POST['value']);
 
     if (updateStorage($id, $value)) {

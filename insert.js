@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    let newDataInserted = false; // Track if new data was inserted
+    let newDataInserted = false;
 
     setTimeout(function() {
         if ($('#dataTable tbody').length === 0) {
@@ -7,7 +7,7 @@ $(document).ready(function() {
             Swal.fire('Error!', 'Table body not found!', 'error');
             return;
         }
-    }, 500); // Delay by 500ms to allow the table to load
+    }, 500);
 
     $('#insertForm').on('submit', function(e) {
         e.preventDefault();
@@ -39,7 +39,7 @@ $(document).ready(function() {
                             return;
                         }
 
-                        newDataInserted = true; // Mark that new data was inserted
+                        newDataInserted = true;
 
                         Swal.fire({
                             title: 'Added!',
@@ -53,27 +53,25 @@ $(document).ready(function() {
                                 var newRow = $('#dataTable tbody tr:last');
 
                                 if (newRow.length) {
-                                    // Smooth fade-in effect
                                     newRow.css({
                                         "opacity": "0",
                                         "transition": "opacity 1.5s ease-in-out"
                                     });
 
                                     setTimeout(() => {
-                                        newRow.css("opacity", "1"); // Smooth fade-in
+                                        newRow.css("opacity", "1");
                                     }, 100);
 
                                     $('html, body').animate({
                                         scrollTop: newRow.offset().top
                                     }, 1000, function() {
-                                        // Apply a subtle glow effect without changing the border thickness
                                         newRow.css({
                                             "box-shadow": "0px 0px 10px 4px #b56cd9", 
                                             "transition": "box-shadow 2s ease-in-out"
                                         });
 
                                         setTimeout(() => {
-                                            newRow.css("box-shadow", "none"); // Remove glow effect after 3s
+                                            newRow.css("box-shadow", "none"); 
                                         }, 3000);
                                     });
                                 }
@@ -89,7 +87,6 @@ $(document).ready(function() {
         });
     });
 
-    // Ensure on page reload, it stays at the top unless new data was inserted
     $(window).on('load', function() {
         if (!newDataInserted) {
             $('html, body').scrollTop(0);

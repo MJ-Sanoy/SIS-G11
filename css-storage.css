@@ -1,4 +1,3 @@
-/* Style for the add storage form */
 #addStorageForm {
     margin-bottom: 20px;
 }
@@ -8,9 +7,9 @@
     margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #444; /* Dark gray background */
-    color: white; /* White text */
-    border: 1px solid #666; /* Slightly lighter gray border */
+    background-color: #444;
+    color: white; 
+    border: 1px solid #666;
     padding: 8px;
     border-radius: 5px;
     outline: none;
@@ -68,7 +67,6 @@
     background-color: #420e78;
 }
 
-/* Centering Content */
 .center-content {
     display: flex;
     justify-content: center;

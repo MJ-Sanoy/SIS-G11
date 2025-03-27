@@ -1,4 +1,3 @@
-- Report tab
 - Filters for = Classification, Storage Location, Stock Number, Remarks, Stock
 - Search for = Product Name, Description
 - MODAL FOR UPDATE FEATURE
