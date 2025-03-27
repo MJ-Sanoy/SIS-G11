@@ -5,7 +5,7 @@
     background-color: #333;
     transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
     width: 350px;
-    height: 250px;
+    height: 300px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,6 @@
     gap: 10px;
     width: 100%;
     min-height: 100vh;
-    margin-top: -100px;
 }
 
 .box-container .row-front1,
@@ -77,13 +76,33 @@
 .box-container .row-front2 .box {
     margin: 10px;
     min-width: 350px;
-    max-width: 500px;
+    max-width: 700px;
 }
 
 .box-container .row-front2:last-child {
     margin-bottom: 0;
 }
 
+#remarks{
+    color: #928dab;;
+}
+
+#no-stock{
+    color: #ff7070;
+}
+
+#low-stock{
+    color: #fffb82;
+}   
+
+#in-stock{
+    color: #a5ff82;
+}
+
+.box:hover #remarks, .box:hover #no-stock, .box:hover #low-stock, .box:hover #in-stock {
+    font-weight: normal;
+    color: #2c1c2c;
+}
 /* Media Queries */
 
 /* 320px - 480px: Small to medium smartphones */
@@ -166,6 +185,9 @@
     .box-container {
         margin-top: 80px; /* Adjust margin for desktops */
     }
+    .box-container .row-front1{
+        margin-top: -300px;
+    }
 }
 
 /* 1201px and more: Extra large screens and TVs */
@@ -176,14 +198,17 @@
     }
 
     .box h2 {
-        font-size: 40px; /* Larger heading size */
+        font-size: 75px; /* Larger heading size */
     }
 
     .box p {
-        font-size: 16px; /* Larger paragraph size */
+        font-size: 17px; /* Larger paragraph size */
     }
 
     .box-container {
         margin-top: 100px; /* Adjust margin for extra large screens */
+    }
+    .box-container .row-front1{
+        margin-top: -375px;
     }
 }
