@@ -23,9 +23,23 @@ document.querySelectorAll('.editable').forEach(cell => {
             .then(data => {
                 console.log(data);
                 if (data.includes("success")) {
-                    alert("Data updated successfully");
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Data updated successfully",
+                        icon: "success",
+                        customClass: {
+                            popup: 'gray-background'
+                        }
+                    });
                 } else {
-                    alert("Failed to update data");
+                    Swal.fire({
+                        title: "Error!",
+                        text: "Failed to update data",
+                        icon: "error",
+                        customClass: {
+                            popup: 'gray-background'
+                        }
+                    });
                 }
             });
         }
@@ -53,9 +67,23 @@ document.querySelectorAll('.editable-dropdown').forEach(select => {
             .then(data => {
                 console.log(data);
                 if (data.includes("success")) {
-                    alert("Data updated successfully");
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Data updated successfully",
+                        icon: "success",
+                        customClass: {
+                            popup: 'gray-background'
+                        }
+                    });
                 } else {
-                    alert("Failed to update data");
+                    Swal.fire({
+                        title: "Error!",
+                        text: "Failed to update data",
+                        icon: "error",
+                        customClass: {
+                            popup: 'gray-background'
+                        }
+                    });
                 }
             });
         }
@@ -77,9 +105,23 @@ document.querySelectorAll('.editable-dropdown').forEach(select => {
         .then(data => {
             console.log(data);
             if (data.includes("success")) {
-                alert("Data updated successfully");
+                Swal.fire({
+                    title: "Success!",
+                    text: "Data updated successfully",
+                    icon: "success",
+                    customClass: {
+                        popup: 'gray-background'
+                    }
+                });
             } else {
-                alert("Failed to update data");
+                Swal.fire({
+                    title: "Error!",
+                    text: "Failed to update data",
+                    icon: "error",
+                    customClass: {
+                        popup: 'gray-background'
+                    }
+                });
             }
         });
     });
@@ -101,16 +143,35 @@ $(document).on('blur', '.editable[data-column="num_stck"]', function () {
             console.log("Sent Value: " + value);
             console.log("Server Response: " + response);
             if (response.trim() === "true") { // Fixed Response Check
-                alert("Stock Number updated successfully!");
-                location.reload();
+                Swal.fire({
+                    title: "Success!",
+                    text: "Stock Number updated successfully!",
+                    icon: "success",
+                    customClass: {
+                        popup: 'gray-background'
+                    }
+                }).then(() => location.reload());
             } else {
-                console.log("Server Response: " + response);
-                alert("Failed to update Stock Number");
+                Swal.fire({
+                    title: "Error!",
+                    text: "Failed to update Stock Number",
+                    icon: "error",
+                    customClass: {
+                        popup: 'gray-background'
+                    }
+                });
             }
         },
         error: function (xhr, status, error) {
             console.log("AJAX Error: " + error);
-            alert("Failed to update Stock Number");
+            Swal.fire({
+                title: "Error!",
+                text: "Failed to update Stock Number",
+                icon: "error",
+                customClass: {
+                    popup: 'gray-background'
+                }
+            });
         }
     });
 });
@@ -131,10 +192,23 @@ $(document).on('blur', '.editable[data-column="size"]', function () {
             console.log("Sent Value: " + value);
             console.log("Server Response: " + response);
             if (response.trim() === "success") {
-                alert("Size updated successfully!");
-                location.reload();
+                Swal.fire({
+                    title: "Success!",
+                    text: "Size updated successfully!",
+                    icon: "success",
+                    customClass: {
+                        popup: 'gray-background'
+                    }
+                }).then(() => location.reload());
             } else {
-                alert("Failed to update Size");
+                Swal.fire({
+                    title: "Error!",
+                    text: "Failed to update Size",
+                    icon: "error",
+                    customClass: {
+                        popup: 'gray-background'
+                    }
+                });
             }
         }
     });
@@ -156,11 +230,23 @@ $(document).on('change', '.editable[data-column="date_delivered"]', function () 
             console.log("Sent Value: " + value);
             console.log("Server Response: " + response);
             if (response.trim() === "success") {
-                alert("Date updated successfully!");
-                location.reload();
+                Swal.fire({
+                    title: "Success!",
+                    text: "Date updated successfully!",
+                    icon: "success",
+                    customClass: {
+                        popup: 'gray-background'
+                    }
+                }).then(() => location.reload());
             } else {
-                console.log("Server Response: " + response);
-                alert("Failed to update Date");
+                Swal.fire({
+                    title: "Error!",
+                    text: "Failed to update Date",
+                    icon: "error",
+                    customClass: {
+                        popup: 'gray-background'
+                    }
+                });
             }
         }
     });

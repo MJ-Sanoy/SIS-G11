@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="stylesheet" href="css-main.css">
 <link rel="stylesheet" href="css-table.css">
     <style>

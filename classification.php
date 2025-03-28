@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="css-main.css">
 <link rel="stylesheet" href="css-table.css">
 <link rel="stylesheet" href="css-classification.css">
+<link rel="stylesheet" href="css-table.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 <div class="nav"><?php include 'navpan.php';?></div>
     <style>
@@ -43,3 +44,4 @@ $conn->close();
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="insert_classification.js"></script>
+<script src="update-clname.js"></script> <!-- Include the new JS file -->
