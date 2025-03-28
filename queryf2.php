@@ -1,4 +1,6 @@
 <script src="table-sort.js"></script>
+<script src="q2func.js" defer></script>
+<link rel="stylesheet" href="q2func.css">
 <?php
 include 'db_connect.php';
 
@@ -15,7 +17,22 @@ $sql = "SELECT p.name AS Product_Name,
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table class='product-table'>
+    echo "<div class='filter-container'>
+            <input type='text' id='searchInput' placeholder='Search Product Name'>
+            <select id='classificationFilter'>
+                <option value=''>All</option>
+            </select>
+            <select id='storageFilter'>
+                <option value=''>All</option>
+            </select>
+            <div class='radio-group'>
+                <label><input type='radio' name='stockFilter' value='0' checked> 0</label>
+                <label><input type='radio' name='stockFilter' value='32'> ≤ 32</label>
+                <label><input type='radio' name='stockFilter' value='greater'> > 32</label>
+            </div>
+          </div>";
+
+    echo "<table id='productTable' class='product-table'>
             <tr class='table-header'>
                 <th class='table-heading'>Product Name</th>
                 <th class='table-heading'>Classification</th>

@@ -1,5 +1,4 @@
 <?php include 'db_connect.php';?>
-<script src="ticker.js"></script>
 <link rel="stylesheet" href="css-main.css">
 <link rel="stylesheet" href="css-table.css">
 <link rel="stylesheet" href="css-query-np.css">
