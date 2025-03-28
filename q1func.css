@@ -1,0 +1,21 @@
+.filter-container {
+    display: flex;
+    gap: 10px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-container input,
+.filter-container select {
+    padding: 5px;
+    font-size: 14px;
+    background-color: #756f91;
+    color: #ffffff;
+}
+
+
+input::placeholder {
+    color: #ffffff;
+}
+
