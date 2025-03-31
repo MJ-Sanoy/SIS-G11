@@ -25,11 +25,12 @@ if ($result->num_rows > 0) {
             <select id='storageFilter'>
                 <option value=''>All</option>
             </select>
-            <div class='radio-group'>
-                <label><input type='radio' name='stockFilter' value='0' checked> 0</label>
-                <label><input type='radio' name='stockFilter' value='32'> ≤ 32</label>
-                <label><input type='radio' name='stockFilter' value='greater'> > 32</label>
-            </div>
+            <select id='stockFilter'>
+                <option value=''>All Stocks</option>
+                <option value='0'>0</option>
+                <option value='32'>Less Than or Equal to 32</option>
+                <option value='greater'>Greater Than 32</option>
+            </select>
           </div>";
 
     echo "<table id='productTable' class='product-table'>

@@ -3,12 +3,11 @@ function filterTable() {
     const searchInput = document.getElementById("searchInput").value.trim().toLowerCase();
     const classificationFilter = document.getElementById("classificationFilter").value.toLowerCase();
     const storageFilter = document.getElementById("storageFilter").value.toLowerCase();
-    const stockFilterElement = document.querySelector('input[name="stockFilter"]:checked');
-    const stockFilter = stockFilterElement ? stockFilterElement.value : "";
+    const stockFilter = document.getElementById("stockFilter").value;
     const table = document.getElementById("productTable");
     const rows = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < rows.length; i++) { // Skip the header row
+    for (let i = 1; i < rows.length; i++) {
         const productName = rows[i].getElementsByTagName("td")[0].textContent.trim().toLowerCase();
         const classification = rows[i].getElementsByTagName("td")[1].textContent.trim().toLowerCase();
         const storageLocation = rows[i].getElementsByTagName("td")[2].textContent.trim().toLowerCase();
@@ -38,12 +37,12 @@ function populateClassificationFilter() {
     const classificationFilter = document.getElementById("classificationFilter");
 
     const classifications = new Set();
-    for (let i = 1; i < rows.length; i++) { // Skip the header row
+    for (let i = 1; i < rows.length; i++) {
         const classification = rows[i].getElementsByTagName("td")[1].textContent.trim();
         classifications.add(classification);
     }
 
-    classificationFilter.innerHTML = '<option value="">All</option>'; // Reset options
+    classificationFilter.innerHTML = '<option value="">All Classification</option>';
     classifications.forEach(classification => {
         const option = document.createElement("option");
         option.value = classification.toLowerCase();
@@ -59,12 +58,12 @@ function populateStorageFilter() {
     const storageFilter = document.getElementById("storageFilter");
 
     const storageLocations = new Set();
-    for (let i = 1; i < rows.length; i++) { // Skip the header row
+    for (let i = 1; i < rows.length; i++) {
         const storageLocation = rows[i].getElementsByTagName("td")[2].textContent.trim();
         storageLocations.add(storageLocation);
     }
 
-    storageFilter.innerHTML = '<option value="">All</option>'; // Reset options
+    storageFilter.innerHTML = '<option value="">All Stock Location</option>';
     storageLocations.forEach(storageLocation => {
         const option = document.createElement("option");
         option.value = storageLocation.toLowerCase();
@@ -73,30 +72,12 @@ function populateStorageFilter() {
     });
 }
 
-// Function to handle toggling of stock filter
-function toggleStockFilter(event) {
-    const radio = event.target;
-    if (radio.checked && radio.dataset.toggled === "true") {
-        radio.checked = false; // Uncheck the radio button
-        radio.dataset.toggled = "false"; // Reset toggle state
-        filterTable(); // Reapply the filter without stock filter
-    } else {
-        document.querySelectorAll('input[name="stockFilter"]').forEach(r => r.dataset.toggled = "false"); // Reset all toggles
-        radio.dataset.toggled = "true"; // Mark the clicked radio as toggled
-        filterTable(); // Apply the filter
-    }
-}
-
 // Attach event listeners for search, classification, storage, and stock filters
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("searchInput").addEventListener("input", filterTable);
     document.getElementById("classificationFilter").addEventListener("change", filterTable);
     document.getElementById("storageFilter").addEventListener("change", filterTable);
-    document.querySelectorAll('input[name="stockFilter"]').forEach(radio => {
-        radio.addEventListener("click", toggleStockFilter);
-        radio.dataset.toggled = "false"; // Initialize toggle state
-        radio.checked = false; // Ensure no radio is selected by default
-    });
+    document.getElementById("stockFilter").addEventListener("change", filterTable);
     populateClassificationFilter();
     populateStorageFilter();
 });

@@ -27,7 +27,7 @@ while ($row = $result->fetch_assoc()) {
 
 <!-- Search and Filter Section -->
 <div class="filter-container">
-    <input type="text" id="searchProduct" placeholder="Search Product">
+    <input type="text" id="searchProduct" placeholder="Search Product Name">
     <input type="text" id="searchDescription" placeholder="Search Description">
 
     <select id="filterClassification">
