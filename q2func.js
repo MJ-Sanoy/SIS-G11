@@ -3,7 +3,8 @@ function filterTable() {
     const searchInput = document.getElementById("searchInput").value.trim().toLowerCase();
     const classificationFilter = document.getElementById("classificationFilter").value.toLowerCase();
     const storageFilter = document.getElementById("storageFilter").value.toLowerCase();
-    const stockFilter = document.getElementById("stockFilter").value;
+    const stockFilterElement = document.querySelector('input[name="stockFilter"]:checked');
+    const stockFilter = stockFilterElement ? stockFilterElement.value : "";
     const table = document.getElementById("productTable");
     const rows = table.getElementsByTagName("tr");
 
@@ -72,12 +73,30 @@ function populateStorageFilter() {
     });
 }
 
+// Function to handle toggling of stock filter
+function toggleStockFilter(event) {
+    const radio = event.target;
+    if (radio.checked && radio.dataset.toggled === "true") {
+        radio.checked = false; // Uncheck the radio button
+        radio.dataset.toggled = "false"; // Reset toggle state
+        filterTable(); // Reapply the filter without stock filter
+    } else {
+        document.querySelectorAll('input[name="stockFilter"]').forEach(r => r.dataset.toggled = "false"); // Reset all toggles
+        radio.dataset.toggled = "true"; // Mark the clicked radio as toggled
+        filterTable(); // Apply the filter
+    }
+}
+
 // Attach event listeners for search, classification, storage, and stock filters
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("searchInput").addEventListener("input", filterTable);
     document.getElementById("classificationFilter").addEventListener("change", filterTable);
     document.getElementById("storageFilter").addEventListener("change", filterTable);
-    document.getElementById("stockFilter").addEventListener("change", filterTable);
+    document.querySelectorAll('input[name="stockFilter"]').forEach(radio => {
+        radio.addEventListener("click", toggleStockFilter);
+        radio.dataset.toggled = "false"; // Initialize toggle state
+        radio.checked = false; // Ensure no radio is selected by default
+    });
     populateClassificationFilter();
     populateStorageFilter();
 });
