@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="css-table.css">
 <link rel="stylesheet" href="css-query-np.css">
 <link rel="stylesheet" href="css-query-table.css">
+<title>QUERY 3</title>
 <div class="nav"><?php include 'navpan.php';?></div>
 
 <div class="Ptitle">QUERY 3</div>

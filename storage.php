@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="css-table.css">
 <link rel="stylesheet" href="css-storage.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<title>Storage</title>
 <div class="nav"><?php include 'navpan.php';?></div>
 <div class='table-container'>
     <style>

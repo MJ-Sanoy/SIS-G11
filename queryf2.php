@@ -12,7 +12,8 @@ $sql = "SELECT p.name AS Product_Name,
         JOIN c ON p.classification_id = c.classification_id
         JOIN stck ON p.product_id = stck.product_id
         JOIN strg ON stck.storage_id = strg.storage_id
-        GROUP BY p.name, c.c_name, strg.strg_location";
+        GROUP BY p.name, c.c_name, strg.strg_location
+        ORDER BY p.product_id ASC";
 
 $result = $conn->query($sql);
 

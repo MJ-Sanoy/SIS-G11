@@ -3,8 +3,7 @@ function filterTable() {
     const searchInput = document.getElementById("searchInput").value.trim().toLowerCase();
     const classificationFilter = document.getElementById("classificationFilter").value.toLowerCase();
     const storageFilter = document.getElementById("storageFilter").value.toLowerCase();
-    const stockFilterElement = document.querySelector('input[name="stockFilter"]:checked');
-    const stockFilter = stockFilterElement ? stockFilterElement.value : "";
+    const stockFilter = document.getElementById("stockFilter").value;
     const table = document.getElementById("productTable");
     const rows = table.getElementsByTagName("tr");
 
@@ -12,7 +11,8 @@ function filterTable() {
         const productName = rows[i].getElementsByTagName("td")[0].textContent.trim().toLowerCase();
         const classification = rows[i].getElementsByTagName("td")[1].textContent.trim().toLowerCase();
         const storageLocation = rows[i].getElementsByTagName("td")[2].textContent.trim().toLowerCase();
-        const stock = parseInt(rows[i].getElementsByTagName("td")[3].textContent.trim(), 10);
+        const stockCell = rows[i].getElementsByTagName("td")[3];
+        const stock = parseInt(stockCell.textContent.trim(), 10);
 
         const matchesSearch = productName.includes(searchInput);
         const matchesClassification = classificationFilter === "" || classification === classificationFilter;
@@ -28,6 +28,17 @@ function filterTable() {
         }
 
         rows[i].style.display = matchesSearch && matchesClassification && matchesStorage && matchesStock ? "" : "none";
+
+        // Apply color to the Number of Stocks column based on its value
+        if (stock === 0) {
+            stockCell.style.backgroundColor = "lightcoral"; // Light red
+        } else if (stock > 0 && stock <= 32) {
+            stockCell.style.backgroundColor = "#BFBF30"; // Yellow
+        } else if (stock > 32) {
+            stockCell.style.backgroundColor = "#546A50"; // Green
+        } else {
+            stockCell.style.backgroundColor = ""; // Reset to default if no match
+        }
     }
 }
 
@@ -73,30 +84,16 @@ function populateStorageFilter() {
     });
 }
 
-// Function to handle toggling of stock filter
-function toggleStockFilter(event) {
-    const radio = event.target;
-    if (radio.checked && radio.dataset.toggled === "true") {
-        radio.checked = false; // Uncheck the radio button
-        radio.dataset.toggled = "false"; // Reset toggle state
-        filterTable(); // Reapply the filter without stock filter
-    } else {
-        document.querySelectorAll('input[name="stockFilter"]').forEach(r => r.dataset.toggled = "false"); // Reset all toggles
-        radio.dataset.toggled = "true"; // Mark the clicked radio as toggled
-        filterTable(); // Apply the filter
-    }
-}
-
 // Attach event listeners for search, classification, storage, and stock filters
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("searchInput").addEventListener("input", filterTable);
     document.getElementById("classificationFilter").addEventListener("change", filterTable);
     document.getElementById("storageFilter").addEventListener("change", filterTable);
-    document.querySelectorAll('input[name="stockFilter"]').forEach(radio => {
-        radio.addEventListener("click", toggleStockFilter);
-        radio.dataset.toggled = "false"; // Initialize toggle state
-        radio.checked = false; // Ensure no radio is selected by default
-    });
+    document.getElementById("stockFilter").addEventListener("change", filterTable);
+
     populateClassificationFilter();
     populateStorageFilter();
+
+    // Apply colors to cells immediately when the page loads
+    filterTable();
 });

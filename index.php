@@ -4,7 +4,7 @@
 <script src="table-sort.js"></script>
 <link rel="stylesheet" href="css-main.css">
 <link rel="stylesheet" href="css-index.css">
-<title>HOME - QUERIES</title>
+<title>Home - Queries</title>
 <style>
     #home {
         background-color: rgba(76, 27, 101, 0.8);

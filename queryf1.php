@@ -5,22 +5,26 @@
 <?php
 include 'db_connect.php';
 
-// Fetch unique classifications and stock locations
+// Fetch products and their classifications
+$sql = "SELECT DISTINCT c.c_name AS Classification, p.name AS Product_Name, p.p_desc AS Description, strg.strg_location AS Stock_Location
+        FROM p
+        JOIN c ON p.classification_id = c.classification_id
+        JOIN stck ON p.product_id = stck.product_id
+        JOIN strg ON stck.storage_id = strg.storage_id
+        ORDER BY p.product_id ASC";
+
+$result = $conn->query($sql);
+
 $classifications = [];
-$stockLocations = [];
+$products = [];
 
-// Get distinct classifications
-$sql = "SELECT DISTINCT c.c_name AS Classification FROM c";
-$result = $conn->query($sql);
-while ($row = $result->fetch_assoc()) {
-    $classifications[] = $row['Classification'];
-}
-
-// Get distinct stock locations
-$sql = "SELECT DISTINCT strg.strg_location AS Stock_Location FROM strg";
-$result = $conn->query($sql);
-while ($row = $result->fetch_assoc()) {
-    $stockLocations[] = $row['Stock_Location'];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row;
+        if (!in_array($row['Classification'], $classifications)) {
+            $classifications[] = $row['Classification'];
+        }
+    }
 }
 
 ?>
@@ -39,23 +43,17 @@ while ($row = $result->fetch_assoc()) {
 
     <select id="filterStock">
         <option value="">All Stock Locations</option>
-        <?php foreach ($stockLocations as $location) {
+        <?php
+        $stockLocations = array_unique(array_column($products, 'Stock_Location'));
+        foreach ($stockLocations as $location) {
             echo "<option value='$location'>$location</option>";
-        } ?>
+        }
+        ?>
     </select>
 </div>
 
 <?php
-// Fetch products
-$sql = "SELECT p.name AS Product_Name, p.p_desc AS Description, c.c_name AS Classification, strg.strg_location AS Stock_Location
-        FROM p
-        JOIN c ON p.classification_id = c.classification_id
-        JOIN stck ON p.product_id = stck.product_id
-        JOIN strg ON stck.storage_id = strg.storage_id";
-
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
+if (!empty($products)) {
     echo "<table class='product-table' id='productTable'>
             <thead>
                 <tr class='table-header'>
@@ -67,12 +65,12 @@ if ($result->num_rows > 0) {
             </thead>
             <tbody>";
 
-    while ($row = $result->fetch_assoc()) {
+    foreach ($products as $product) {
         echo "<tr class='table-row'>
-                <td class='table-cell'>{$row['Product_Name']}</td>
-                <td class='table-cell'>{$row['Description']}</td>
-                <td class='table-cell classification'>{$row['Classification']}</td>
-                <td class='table-cell stock-location'>{$row['Stock_Location']}</td>
+                <td class='table-cell'>{$product['Product_Name']}</td>
+                <td class='table-cell'>{$product['Description']}</td>
+                <td class='table-cell classification'>{$product['Classification']}</td>
+                <td class='table-cell stock-location'>{$product['Stock_Location']}</td>
               </tr>";
     }
 

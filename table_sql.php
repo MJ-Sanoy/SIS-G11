@@ -1,5 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="update.js"></script>
+<title>Main Table</title>
 <?php
 include 'db_connect.php';
 
@@ -43,27 +42,30 @@ $sql = "SELECT
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table id='dataTable' border='1'>
-            <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Description</th>
-                <th>Classification</th>
-                <th>Storage Location</th>
-                <th>Stock Number</th>
-                <th>Size</th>
-                <th>Date Delivered</th>
-                <th>Remarks</th>
-                <th>Action</th>
-            </tr>";
+    echo "<table id='dataTable' class='product-table' border='1'>
+            <thead>
+                <tr class='table-header'>
+                    <th class='table-heading'>Product ID</th>
+                    <th class='table-heading'>Product Name</th>
+                    <th class='table-heading'>Description</th>
+                    <th class='table-heading'>Classification</th>
+                    <th class='table-heading'>Storage Location</th>
+                    <th class='table-heading'>Stock Number</th>
+                    <th class='table-heading'>Size</th>
+                    <th class='table-heading'>Date Delivered</th>
+                    <th class='table-heading'>Remarks</th>
+                    <th class='table-heading'>Action</th>
+                </tr>
+            </thead>
+            <tbody>";
 
     while($row = $result->fetch_assoc()) {
         $remarks = ($row['num_stck'] == 0) ? 'No available stock' : (($row['num_stck'] <= 32) ? 'Low stock' : 'In stock');
-        echo "<tr>
-                <td style='font-weight: bold;'>" . $row["product_id"] . "</td>
-                <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='name'>" . $row["product_name"] . "</td>
-                <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='p_desc'>" . $row["p_desc"] . "</td>
-                <td>
+        echo "<tr class='table-row'>
+                <td class='table-cell' style='font-weight: bold;'>" . $row["product_id"] . "</td>
+                <td class='table-cell editable' contenteditable='true' data-id='" . $row['product_id'] . "' data-column='name'>" . $row["product_name"] . "</td>
+                <td class='table-cell editable' contenteditable='true' data-id='" . $row['product_id'] . "' data-column='p_desc'>" . $row["p_desc"] . "</td>
+                <td class='table-cell'>
                     <select class='editable-dropdown' data-id='" . $row['product_id'] . "' data-column='classification_id'>";
                         foreach ($classifications as $classification) {
                             $selected = ($row['classification'] == $classification['c_name']) ? 'selected' : '';
@@ -71,7 +73,7 @@ if ($result->num_rows > 0) {
                         }
         echo        "</select>
                 </td>
-                <td>
+                <td class='table-cell'>
                     <select class='editable-dropdown' data-id='" . $row['stck_id'] . "' data-column='storage_id'>";
                         foreach ($storage_locations as $storage) {
                             $selected = ($row['strg_location'] == $storage['strg_location']) ? 'selected' : '';
@@ -79,19 +81,19 @@ if ($result->num_rows > 0) {
                         }
         echo        "</select>
                 </td>
-                <td contenteditable='true' class='editable' data-id='" . $row['stck_id'] . "' data-column='num_stck'>" . $row["num_stck"] . "</td>
-                <td contenteditable='true' class='editable' data-id='" . $row['product_id'] . "' data-column='size'>" . $row["size"] . "</td>
-                <td>
+                <td class='table-cell editable' contenteditable='true' data-id='" . $row['stck_id'] . "' data-column='num_stck'>" . $row["num_stck"] . "</td>
+                <td class='table-cell editable' contenteditable='true' data-id='" . $row['product_id'] . "' data-column='size'>" . $row["size"] . "</td>
+                <td class='table-cell'>
                     <input type='date' class='editable' data-id='" . $row['product_id'] . "' data-column='date_delivered' value='" . $row['date_delivered'] . "' />
                 </td>
-                <td style='font-weight: bold;'>" . $remarks . "</td>
-                <td>
+                <td class='table-cell' style='font-weight: bold;'>" . $remarks . "</td>
+                <td class='table-cell'>
                     <a href='delete.php?id={$row['product_id']}' class='btn btn-delete'>Delete</a>
                 </td>
             </tr>";
     }
 
-    echo "</table>";
+    echo "</tbody></table>";
 } else {
     echo "No results found";
 }
@@ -99,4 +101,6 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="tablescript.js"></script>
+<script src="table-sortmain.js"></script>

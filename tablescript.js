@@ -150,7 +150,11 @@ $(document).on('blur', '.editable[data-column="num_stck"]', function () {
                     customClass: {
                         popup: 'gray-background'
                     }
-                }).then(() => location.reload());
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.reload(); // Reload only after user clicks "OK"
+                    }
+                });
             } else {
                 Swal.fire({
                     title: "Error!",

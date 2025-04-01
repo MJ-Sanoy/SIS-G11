@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="css-classification.css">
 <link rel="stylesheet" href="css-table.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<title>Classification</title>
 <div class="nav"><?php include 'navpan.php';?></div>
     <style>
         #classification{
