@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="css-main.css">
-<link rel="stylesheet" href="css-table.css">
-<link rel="stylesheet" href="css-classification.css">
-<link rel="stylesheet" href="css-table.css">
+<link rel="stylesheet" href="assets/css/css-main.css">
+<link rel="stylesheet" href="assets/css/css-table.css">
+<link rel="stylesheet" href="assets/css/css-classification.css">
+<link rel="stylesheet" href="assets/css/css-table.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 <title>Classification</title>
 <div class="nav"><?php include 'navpan.php';?></div>
@@ -44,5 +44,5 @@ $conn->close();
 <?php include 'footer.php';?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="insert_classification.js"></script>
-<script src="update-clname.js"></script> <!-- Include the new JS file -->
+<script src="assets/js/insert_classification.js"></script>
+<script src="assets/js/update-clname.js"></script>

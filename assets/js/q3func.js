@@ -10,20 +10,20 @@ function applyCellColors() {
 
         // Apply color to the Number of Stocks column
         if (numberOfStocks === 0) {
-            numberOfStocksCell.style.backgroundColor = "#780000";
+            numberOfStocksCell.style.backgroundColor = "#c14545";
         } else if (numberOfStocks > 0 && numberOfStocks <= 32) {
-            numberOfStocksCell.style.backgroundColor = "#BFBF30";
+            numberOfStocksCell.style.backgroundColor = "#d8c14a";
         } else if (numberOfStocks > 32) {
-            numberOfStocksCell.style.backgroundColor = "#546A50"; 
+            numberOfStocksCell.style.backgroundColor = "#349d7a"; 
         }
 
         // Apply color to the Remarks column based on its value
         if (remarks === "no available stock") {
-            remarksCell.style.backgroundColor = "#780000";
+            remarksCell.style.backgroundColor = "#c14545";
         } else if (remarks === "low stock") {
-            remarksCell.style.backgroundColor = "#BFBF30"; 
+            remarksCell.style.backgroundColor = "#d8c14a"; 
         } else if (remarks === "in stock") {
-            remarksCell.style.backgroundColor = "#546A50";
+            remarksCell.style.backgroundColor = "#349d7a";
         }
     }
 }

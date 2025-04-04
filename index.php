@@ -1,9 +1,8 @@
 <meta charset="UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="restrict-animation.js"></script>
-<script src="table-sort.js"></script>
-<link rel="stylesheet" href="css-main.css">
-<link rel="stylesheet" href="css-index.css">
+<link rel="stylesheet" href="assets/css/css-main.css">
+<link rel="stylesheet" href="assets/css/css-index.css">]
+<script src="assets/js/no-scroll.js"></script>
 <title>Home - Queries</title>
 <style>
     #home {

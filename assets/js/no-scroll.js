@@ -37,7 +37,7 @@ function preventKeyboardScroll(event) {
 
 function handleResize() {
     const screenWidth = window.innerWidth;
-    console.log(`Screen width: ${screenWidth}`); // Debugging output
+    console.log(`Screen width: ${screenWidth}`);
 
     if (screenWidth >= 188 && screenWidth <= 769) {
         enableScroll(); 

@@ -17,8 +17,13 @@
     animation: fadeIn 1s ease-in-out;
 }
 
-.Ptitle:hover {
-    font-weight: bolder;
+.Ptitle a{
+    color: #ffffff;
+    transition: color 0.3s ease-in-out
+}
+
+.Ptitle a:hover{
+    color: #d591ff;;
 }
 
 .next-previous {
@@ -39,7 +44,7 @@
 
 .previous a, .next a {
     text-decoration: none;
-    transition: color 0.2s, font-size 0.3s;
+    transition: color 0.2s;
 }
 
 .next a {

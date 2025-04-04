@@ -1,33 +1,25 @@
 <?php
 include 'db_connect.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    header('Content-Type: application/json');
+header('Content-Type: application/json'); 
 
-    if (!isset($_POST['new_storage']) || empty(trim($_POST['new_storage']))) {
-        echo json_encode(['error' => 'Storage location cannot be empty.']);
+if (isset($_POST['new_storage']) && !empty(trim($_POST['new_storage']))) {
+    $newStorage = trim($_POST['new_storage']);
+
+    $stmt = $conn->prepare("INSERT INTO strg (strg_location) VALUES (?)");
+    $stmt->bind_param("s", $newStorage);
+
+    if ($stmt->execute()) {
+        echo json_encode(["success" => true, "id" => $stmt->insert_id, "name" => $newStorage]);
+        exit; // Stop execution after JSON output
+    } else {
+        echo json_encode(["success" => false, "error" => "Database insert failed."]);
         exit;
     }
-
-    $new_storage = trim($_POST['new_storage']);
-
-    $sql_insert = "INSERT INTO strg (strg_location) VALUES (?)";
-    $stmt = $conn->prepare($sql_insert);
-
-    if ($stmt) {
-        $stmt->bind_param("s", $new_storage);
-
-        if ($stmt->execute()) {
-            echo json_encode(['id' => $stmt->insert_id]);
-        } else {
-            echo json_encode(['error' => 'Error inserting data: ' . $stmt->error]);
-        }
-
-        $stmt->close();
-    } else {
-        echo json_encode(['error' => 'SQL Prepare failed: ' . $conn->error]);
-    }
-
-    $conn->close();
+} else {
+    echo json_encode(["success" => false, "error" => "Invalid input."]);
+    exit;
 }
+
+$conn->close();
 ?>

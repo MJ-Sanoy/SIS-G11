@@ -266,8 +266,10 @@ $(document).off('click', '.btn-delete').on('click', '.btn-delete', function (e) 
         text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
+        background: "#444", 
+        color: "#fff", 
+        confirmButtonColor: '#F7A511',
+        cancelButtonColor: '#744491',
         confirmButtonText: "Yes, delete it!",
         customClass: {
             popup: 'gray-background' // Apply the gray-background class

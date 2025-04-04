@@ -30,7 +30,6 @@ $sql = "SELECT
             c.c_name AS classification,
             strg.strg_location,
             stck.num_stck,
-            p.size,
             d.date_delivered,
             stck.remarks
         FROM p
@@ -51,7 +50,6 @@ if ($result->num_rows > 0) {
                     <th class='table-heading'>Classification</th>
                     <th class='table-heading'>Storage Location</th>
                     <th class='table-heading'>Stock Number</th>
-                    <th class='table-heading'>Size</th>
                     <th class='table-heading'>Date Delivered</th>
                     <th class='table-heading'>Remarks</th>
                     <th class='table-heading'>Action</th>
@@ -82,7 +80,6 @@ if ($result->num_rows > 0) {
         echo        "</select>
                 </td>
                 <td class='table-cell editable' contenteditable='true' data-id='" . $row['stck_id'] . "' data-column='num_stck'>" . $row["num_stck"] . "</td>
-                <td class='table-cell editable' contenteditable='true' data-id='" . $row['product_id'] . "' data-column='size'>" . $row["size"] . "</td>
                 <td class='table-cell'>
                     <input type='date' class='editable' data-id='" . $row['product_id'] . "' data-column='date_delivered' value='" . $row['date_delivered'] . "' />
                 </td>
@@ -102,5 +99,5 @@ $conn->close();
 ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="tablescript.js"></script>
-<script src="table-sortmain.js"></script>
+<script src="assets/js/tablescript.js"></script>
+<script src="assets/js/table-sortmain.js"></script>

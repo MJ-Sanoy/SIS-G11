@@ -1,3 +1,0 @@
-# Include PHP files in the build
-include:
-  - "*index.php"

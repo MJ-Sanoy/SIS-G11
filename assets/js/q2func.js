@@ -31,13 +31,13 @@ function filterTable() {
 
         // Apply color to the Number of Stocks column based on its value
         if (stock === 0) {
-            stockCell.style.backgroundColor = "lightcoral"; // Light red
+            stockCell.style.backgroundColor = "#c14545";
         } else if (stock > 0 && stock <= 32) {
-            stockCell.style.backgroundColor = "#BFBF30"; // Yellow
+            stockCell.style.backgroundColor = "#d8c14a"; 
         } else if (stock > 32) {
-            stockCell.style.backgroundColor = "#546A50"; // Green
+            stockCell.style.backgroundColor = "#349d7a";
         } else {
-            stockCell.style.backgroundColor = ""; // Reset to default if no match
+            stockCell.style.backgroundColor = "#EEEEEE";
         }
     }
 }

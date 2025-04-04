@@ -1,6 +1,6 @@
-<script src="table-sort.js"></script>
-<script src="q3func.js" defer></script>
-<link rel="stylesheet" href="q3func.css">
+<script src="assets/js/table-sort.js"></script>
+<script src="assets/js/q3func.js" defer></script>
+<link rel="stylesheet" href="assets/css/q3func.css">
 
 <?php
 include 'db_connect.php';

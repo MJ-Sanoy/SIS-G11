@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "Classification",
         "Storage Location",
         "Stock Number",
-        "Size",
         "Date Delivered",
         "Remarks"
     ];
@@ -39,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (cellA.querySelector("select") && cellB.querySelector("select")) {
                     valueA = cellA.querySelector("select").value.trim().toLowerCase();
                     valueB = cellB.querySelector("select").value.trim().toLowerCase();
-                } else if (index === 7) { // Handle sorting for Date Delivered column (index 7)
+                } else if (index === 6) { // Handle sorting for Date Delivered column (index 6)
                     valueA = new Date(cellA.querySelector("input").value.trim());
                     valueB = new Date(cellB.querySelector("input").value.trim());
                     return ascending ? valueA - valueB : valueB - valueA;
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Apply colors to the Remarks column
             rows.forEach(row => {
-                const remarksCell = row.querySelectorAll(".table-cell")[8]; // Assuming Remarks is the 9th column (index 8)
+                const remarksCell = row.querySelectorAll(".table-cell")[7]; // Updated index for Remarks column
                 const remarks = remarksCell.textContent.trim().toLowerCase();
 
                 if (remarks === "no available stock") {
@@ -103,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     originalRows.forEach(row => tbody.appendChild(row)); // Reset table order
                     headers.forEach(h => h.innerHTML = h.textContent.replace(" ↑", "").replace(" ↓", ""));
                     rows.forEach(row => {
-                        const remarksCell = row.querySelectorAll(".table-cell")[8];
+                        const remarksCell = row.querySelectorAll(".table-cell")[7]; // Updated index for Remarks column
                         const remarks = remarksCell.textContent.trim().toLowerCase();
 
                         if (remarks === "no available stock") {
@@ -128,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Apply colors to Remarks column immediately on page load
     const rows = Array.from(tbody.querySelectorAll(".table-row"));
     rows.forEach(row => {
-        const remarksCell = row.querySelectorAll(".table-cell")[8]; // Assuming Remarks is the 9th column (index 8)
+        const remarksCell = row.querySelectorAll(".table-cell")[7]; // Updated index for Remarks column
         const remarks = remarksCell.textContent.trim().toLowerCase();
 
         if (remarks === "no available stock") {

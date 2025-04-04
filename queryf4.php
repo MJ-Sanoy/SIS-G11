@@ -1,6 +1,6 @@
-<script src="table-sort.js"></script>
-<script src="q4func.js" defer></script>
-<link rel="stylesheet" href="q4func.css">
+<script src="assets/js/table-sort.js"></script>
+<script src="assets/js/q4func.js" defer></script>
+<link rel="stylesheet" href="assets/css/q4func.css">
 
 <?php
 include 'db_connect.php';

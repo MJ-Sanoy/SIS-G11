@@ -27,11 +27,11 @@ function filterTable() {
 
         // Apply color to the Remarks column based on its value
         if (remarks === "no available stock") {
-            remarksCell.style.backgroundColor = "#780000"; // Dark red
+            remarksCell.style.backgroundColor = "#c14545"; // Dark red
         } else if (remarks === "low stock") {
-            remarksCell.style.backgroundColor = "#BFBF30"; // Yellow
+            remarksCell.style.backgroundColor = "#d8c14a"; // Yellow
         } else if (remarks === "in stock") {
-            remarksCell.style.backgroundColor = "#546A50"; // Green
+            remarksCell.style.backgroundColor = "#349d7a"; // Green
         } else {
             remarksCell.style.backgroundColor = ""; // Reset to default if no match
         }

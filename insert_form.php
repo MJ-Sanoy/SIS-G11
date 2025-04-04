@@ -30,7 +30,6 @@ if ($storage_result && $storage_result->num_rows > 0) {
             <th>Classification</th>
             <th>Storage Location</th>
             <th>Stock Number</th>
-            <th>Size</th>
             <th>Date Delivered</th>
             <th>Action</th>
         </tr>
@@ -54,7 +53,6 @@ if ($storage_result && $storage_result->num_rows > 0) {
                 </select>
             </td>
             <td><input type="number" name="num_stck" min="0" required></td>
-            <td><input type="text" name="size" required></td>
             <td><input type="date" name="date_delivered" required></td>
             <td><button type="submit" name="submit">Insert</button></td>
         </tr>
@@ -62,4 +60,4 @@ if ($storage_result && $storage_result->num_rows > 0) {
 </form>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="insert.js"></script>
+<script src="assets/js/insert.js"></script>
