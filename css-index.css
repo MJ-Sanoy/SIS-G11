@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .box {
     border: 1px solid #ccc;
     padding: 10px;
@@ -14,6 +23,7 @@
     border-radius: 20px;
     box-shadow: #ffffff 0px 0px 10px;
     overflow: visible;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .box:hover {
@@ -219,4 +229,8 @@
     .box-container .row-front1 {
         margin-top: -375px;
     }
+}
+
+.nav{
+    animation: none !important;
 }

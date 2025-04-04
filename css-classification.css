@@ -1,5 +1,15 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 #addClassificationForm {
     margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #addClassificationForm input[type="text"] {
@@ -26,6 +36,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #classificationTable th, #classificationTable td {
@@ -89,4 +100,9 @@
     height: 100%;
     font-weight: bolder;
 }
+
+.nav {
+    animation: none !important;
+}
+
 
