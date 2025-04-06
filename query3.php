@@ -8,6 +8,7 @@
 <div class="nav"><?php include 'navpan.php';?></div>
 
 <div class="Ptitle"><a href="index.php">QUERY 3</a></div>
+<div class="Psub"><p>Classification | Date Delivered | Number of Stocks Available | Remarks</p></div>
 <div class="next-previous">
     <div>
         <div class="previous"><a href="query2.php">Previous</a></div>

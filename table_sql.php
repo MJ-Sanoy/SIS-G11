@@ -41,7 +41,8 @@ $sql = "SELECT
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table id='dataTable' class='product-table' border='1'>
+    echo "<div class='table-scroll-wrapper'>
+            <table id='dataTable' class='product-table' border='1'>
             <thead>
                 <tr class='table-header'>
                     <th class='table-heading'>Product ID</th>
@@ -90,7 +91,7 @@ if ($result->num_rows > 0) {
             </tr>";
     }
 
-    echo "</tbody></table>";
+    echo "</tbody></table></div>";
 } else {
     echo "No results found";
 }
@@ -101,3 +102,5 @@ $conn->close();
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="assets/js/tablescript.js"></script>
 <script src="assets/js/table-sortmain.js"></script>
+<script src="assets/js/scroll.js"></script>
+<script src="assets/js/scroll-table.js"></script>

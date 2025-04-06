@@ -8,6 +8,7 @@
 <div class="nav"><?php include 'navpan.php';?></div>
 
 <div class="Ptitle"><a href="index.php">QUERY 5</a></div>
+<div class="Psub"><p>Classification of Products Delivered on a Certain Date.</p></div>
 <div class="next-previous">
     <div>
         <div class="previous"><a href="query4.php">Previous</a></div>

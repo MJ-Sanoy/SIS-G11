@@ -41,10 +41,6 @@ if ($result->num_rows > 0) {
 
 <?php
 if (!empty($products)) {
-    echo "<div>
-          <label class='l1' for='dateFilter'>Select Year and Month:</label> 
-          <label class='l2' for='fullDateFilter'>Select Full Date:</label>
-          </div>";
     echo "<div class='filter-container'>
             <select id='classificationFilter'>
                 <option value=''>All Classifications</option>";

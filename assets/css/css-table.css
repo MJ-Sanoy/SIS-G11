@@ -92,3 +92,145 @@ a{
     padding: 10px;
     border-radius: 5px;
 }
+
+/* 📱 Mobile: 0 - 480px */
+@media (max-width: 480px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 50%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 1rem;
+        background-color: #222;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #444;
+        font-size: 12px;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #bbb;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    .editable-dropdown, .editable {
+        width: 100%;
+    }
+
+    .table-container {
+        width: 95%;
+    }
+}
+
+/* 📲 Small Tablets: 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    table {
+        width: 1000px;
+        font-size: 13px;
+        margin-top: 0px;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 13px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .editable-dropdown, .editable {
+        font-size: 13px;
+    }
+
+    .table-container {
+        width: 95%;
+    }
+    
+    .insert-form{
+        width: 1000px;
+    }
+}
+
+/* 💻 Medium Screens: 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    table {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+
+    .editable-dropdown, .editable {
+        font-size: 14px;
+    }
+    .insert-form{
+        width: 95%;
+    }
+}
+
+/* 🖥 Standard Desktops: 1025px - 1200px */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    table {
+        width: 85%;
+        font-size: 15px;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 15px;
+    }
+}
+
+/* 🖥💡 Large Screens: 1201px+ */
+@media (min-width: 1201px) {
+    table {
+        width: 80%;
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}

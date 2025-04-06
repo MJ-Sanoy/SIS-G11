@@ -1,15 +1,8 @@
 <link rel="stylesheet" href="assets/css/css-main.css">
-<link rel="stylesheet" href="assets/css/css-table.css">
 <link rel="stylesheet" href="assets/css/css-classification.css">
-<link rel="stylesheet" href="assets/css/css-table.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 <title>Classification</title>
 <div class="nav"><?php include 'navpan.php';?></div>
-    <style>
-        #classification{
-            background-color:rgba(76, 27, 101, 0.8);
-        }
-    </style>
         <div class='table-container'>
         <form id='addClassificationForm' method='POST'>
             <input type='text' name='new_classification' id='new_classification' placeholder='New Classification' required>

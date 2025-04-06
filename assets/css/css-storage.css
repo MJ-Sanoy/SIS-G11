@@ -1,3 +1,7 @@
+#storage{
+    background-color:rgba(76, 27, 101, 0.8);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -8,7 +12,9 @@
 }
 
 #addStorageForm {
+    width: 70%;
     margin-bottom: 20px;
+    margin: 0 auto 10px auto;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -46,11 +52,10 @@
     font-size: 16px;
 }
 
-/* Storage Table */
 #storageTable {
-    width: 100%;
+    width: 70%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin: 0 auto 100px auto;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -60,7 +65,15 @@
     text-align: left;
 }
 
-/* Delete Button */
+th {
+    background-color: #928DAB;
+    color: #E6EBE4;
+}
+
+.editable{
+    background-color: #444; 
+}
+
 .delete-button {
     padding: 10px 15px;
     background-color: #9955e1;

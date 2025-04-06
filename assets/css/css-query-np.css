@@ -19,11 +19,29 @@
 
 .Ptitle a{
     color: #ffffff;
-    transition: color 0.3s ease-in-out
+    transition: color 0.3s ease-in-out;
 }
 
 .Ptitle a:hover{
-    color: #d591ff;;
+    color: #d591ff;
+}
+
+.Psub{
+    font-size: 18px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.Psub p{
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+
+.Psub p:hover{
+    color: #d591ff;
 }
 
 .next-previous {
@@ -57,4 +75,102 @@
 
 .next a:hover, .previous a:hover {
     color: #9f4bd4;
+}
+
+/* Mobile: 0 - 480px */
+@media (max-width: 480px) {
+    .Ptitle {
+        font-size: 28px;
+    }
+
+    .Psub {
+        font-size: 14px;
+    }
+
+    .next-previous {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .previous, .next {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+/* Small Tablets: 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .Ptitle {
+        font-size: 32px;
+    }
+
+    .Psub {
+        font-size: 16px;
+    }
+
+    .next-previous {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .previous, .next {
+        font-size: 18px;
+    }
+}
+
+/* Medium Screens: 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Ptitle {
+        font-size: 36px;
+    }
+
+    .Psub {
+        font-size: 17px;
+    }
+
+    .next-previous {
+        width: 85%;
+    }
+
+    .previous, .next {
+        font-size: 19px;
+    }
+}
+
+/* Standard Desktops: 1025px - 1200px */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .Ptitle {
+        font-size: 38px;
+    }
+
+    .Psub {
+        font-size: 18px;
+    }
+
+    .next-previous {
+        width: 90%;
+    }
+
+    .previous, .next {
+        font-size: 20px;
+    }
+}
+
+/* Large Screens: 1201px+ */
+@media (min-width: 1201px) {
+    .Ptitle {
+        font-size: 40px;
+    }
+
+    .Psub {
+        font-size: 18px;
+    }
+
+    .next-previous {
+        width: 90%;
+    }
+
+    .previous, .next {
+        font-size: 20px;
+    }
 }

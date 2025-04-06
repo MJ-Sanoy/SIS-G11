@@ -62,7 +62,7 @@
         @media (max-width: 480px) {
             .nav {
                 padding: 10px;
-                animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
+                animation: fadeIn 0.5s ease-in-out;
             }
 
             .links {
@@ -105,11 +105,6 @@
 
             .links.show {
                 display: flex;
-            }
-
-            .welcome {
-                margin-left: 120px;
-                margin-right: auto;
             }
         }
 
@@ -161,7 +156,6 @@
             }
 
             .welcome {
-                margin-left: 235px;
                 margin-right: auto;
             }
         }

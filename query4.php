@@ -8,6 +8,7 @@
 <div class="nav"><?php include 'navpan.php'; ?></div>
 
 <div class="Ptitle"><a href="index.php">QUERY 4</a></div>
+<div class="Psub"><p>The Stock Location | Classification of Products with low stock, in stock, or no available stock</p></div>
 <div class="next-previous">
     <div>
         <div class="previous"><a href="query3.php">Previous</a></div>

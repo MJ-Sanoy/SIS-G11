@@ -61,3 +61,4 @@ if ($storage_result && $storage_result->num_rows > 0) {
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="assets/js/insert.js"></script>
+<script src="assets/js/scroll-form.js"></script>

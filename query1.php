@@ -10,6 +10,7 @@
 <div class="nav"><?php include 'navpan.php'; ?></div>
 
 <div class="Ptitle"><a href="index.php">QUERY 1</a></div>
+<div class="Psub"><p>Product name | Description | Classification | Stock Location</p></div>
 <div class="next-previous">
     <div>
         <div class="previous"><a href="index.php">Home</a></div>

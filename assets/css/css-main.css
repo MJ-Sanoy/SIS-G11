@@ -194,7 +194,6 @@ input, select {
     border-radius: 5px; 
 }
 
-/* Fade-in effect */
 .new-row {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
