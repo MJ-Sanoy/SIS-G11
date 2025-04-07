@@ -1,106 +1,102 @@
 $(document).ready(function () {
     // Insert Storage Location
-    $(document).ready(function () {
-        $("#addStorageForm").submit(function (event) {
-            event.preventDefault();
-    
-            let newStorage = $("#new_storage").val().trim();
-    
-            if (newStorage === "") {
-                Swal.fire({
-                    title: "Error",
-                    text: "Storage location cannot be empty.",
-                    icon: "error",
-                    background: "#444",
-                    color: "#fff",
-                    confirmButtonColor: "#b56cd9",
-                });
-                return;
-            }
-    
+    $("#addStorageForm").off("submit").on("submit", function (event) {
+        event.preventDefault();
+
+        let newStorage = $("#new_storage").val().trim();
+
+        if (newStorage === "") {
             Swal.fire({
-                title: "Are you sure?",
-                text: "Do you want to add this storage location?",
-                icon: "question",
-                showCancelButton: true,
-                confirmButtonText: "Yes, add it!",
-                cancelButtonText: "Cancel",
+                title: "Error",
+                text: "Storage location cannot be empty.",
+                icon: "error",
                 background: "#444",
                 color: "#fff",
-                confirmButtonColor: '#F7A511',
-                cancelButtonColor: '#744491',
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $.ajax({
-                        url: "insert_storage.php",
-                        type: "POST",
-                        data: { new_storage: newStorage },
-                        dataType: "json",
-                        success: function (response) {
-                            console.log("AJAX Response:", response); // Debugging
-    
-                            if (response.success) {
-                                Swal.fire({
-                                    title: "Success!",
-                                    text: "New storage location added successfully.",
-                                    icon: "success",
-                                    background: "#444",
-                                    color: "#fff",
-                                    confirmButtonColor: "#9b59b6"
-                                });
-    
-                                let newRow = $(`
-                                    <tr data-id="${response.id}" class="newly-added" style="display: none;">
-                                        <td style="text-align: center; font-weight: bold;">${response.id}</td>
-                                        <td contenteditable="true" class="editable" data-column="strg_location">${response.name}</td>
-                                        <td><button class="delete-button" data-id="${response.id}">Delete</button></td>
-                                    </tr>`);
-    
-                                $("#storageTable tbody").append(newRow);
-                                newRow.fadeIn(1000);
-    
-                                $('html, body').animate({
-                                    scrollTop: newRow.offset().top
-                                }, 800);
-    
-                                newRow.css({
-                                    "box-shadow": "0px 0px 10px 2px #b56cd9",
-                                    "transition": "box-shadow 2s ease-in-out"
-                                });
-    
-                                setTimeout(() => {
-                                    newRow.css("box-shadow", "0px 0px 0px 0px");
-                                }, 3000);
-    
-                                $("#new_storage").val(""); // Clear input field
-                            } else {
-                                Swal.fire({
-                                    title: "Error",
-                                    text: response.error,
-                                    icon: "error",
-                                    background: "#444",
-                                    color: "#fff",
-                                    confirmButtonColor: "#9b59b6"
-                                });
-                            }
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
-                            console.log("AJAX Error:", textStatus, errorThrown, jqXHR.responseText);
+                confirmButtonColor: "#b56cd9",
+            });
+            return;
+        }
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to add this storage location?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Yes, add it!",
+            cancelButtonText: "Cancel",
+            background: "#444",
+            color: "#fff",
+            confirmButtonColor: '#F7A511',
+            cancelButtonColor: '#744491',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "insert_storage.php",
+                    type: "POST",
+                    data: { new_storage: newStorage },
+                    dataType: "json",
+                    success: function (response) {
+                        console.log("AJAX Response:", response); // Debugging
+
+                        if (response.success) {
+                            Swal.fire({
+                                title: "Success!",
+                                text: "New storage location added successfully.",
+                                icon: "success",
+                                background: "#444",
+                                color: "#fff",
+                                confirmButtonColor: "#9b59b6"
+                            });
+
+                            let newRow = $(`<tr data-id="${response.id}" class="newly-added" style="display: none;">
+                                <td style="text-align: center; font-weight: bold;">${response.id}</td>
+                                <td contenteditable="true" class="editable" data-column="strg_location">${response.name}</td>
+                                <td><button class="delete-button" data-id="${response.id}">Delete</button></td>
+                            </tr>`);
+
+                            $("#storageTable tbody").append(newRow);
+                            newRow.fadeIn(1000);
+
+                            $('html, body').animate({
+                                scrollTop: newRow.offset().top
+                            }, 800);
+
+                            newRow.css({
+                                "box-shadow": "0px 0px 10px 2px #b56cd9",
+                                "transition": "box-shadow 2s ease-in-out"
+                            });
+
+                            setTimeout(() => {
+                                newRow.css("box-shadow", "0px 0px 0px 0px");
+                            }, 3000);
+
+                            $("#new_storage").val(""); // Clear input field
+                        } else {
                             Swal.fire({
                                 title: "Error",
-                                text: "Something went wrong!",
+                                text: response.error,
                                 icon: "error",
                                 background: "#444",
                                 color: "#fff",
                                 confirmButtonColor: "#9b59b6"
                             });
-                        },
-                    });
-                }
-            });
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("AJAX Error:", textStatus, errorThrown, jqXHR.responseText);
+                        Swal.fire({
+                            title: "Error",
+                            text: "Something went wrong!",
+                            icon: "error",
+                            background: "#444",
+                            color: "#fff",
+                            confirmButtonColor: "#9b59b6"
+                        });
+                    },
+                });
+            }
         });
     });
-    
 
     // Edit Storage Location
     $(document).on("blur", ".editable", function () {

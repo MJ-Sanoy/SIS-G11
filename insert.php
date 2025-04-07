@@ -11,17 +11,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $classification_id = $_POST['classification_id'] ?? '';
     $storage_id = $_POST['storage_id'] ?? '';
     $num_stck = $_POST['num_stck'] ?? '';
-    $size = $_POST['size'] ?? '';
     $date_delivered = $_POST['date_delivered'] ?? '';
 
-    if (empty($name) || empty($p_desc) || empty($classification_id) || empty($storage_id) || empty($num_stck) || empty($size) || empty($date_delivered)) {
+    if (empty($name) || empty($p_desc) || empty($classification_id) || empty($storage_id) || empty($num_stck) || empty($date_delivered)) {
         echo json_encode(["error" => "All fields are required."]);
         exit;
     }
 
-    $stmt = $conn->prepare("INSERT INTO p (name, p_desc, classification_id, size) VALUES (?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO p (name, p_desc, classification_id) VALUES (?, ?, ?)");
     if ($stmt) {
-        $stmt->bind_param("ssis", $name, $p_desc, $classification_id, $size);
+        $stmt->bind_param("ssi", $name, $p_desc, $classification_id);
         if ($stmt->execute()) {
             $last_id = $stmt->insert_id;
 
@@ -46,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "classification_name" => $classification_name,
                 "storage_location" => $storage_location,
                 "num_stck" => $num_stck,
-                "size" => $size,
                 "date_delivered" => $date_delivered
             ]);
         } else {

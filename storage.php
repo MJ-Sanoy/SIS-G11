@@ -48,4 +48,4 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="assets/js/insert_storage.js"></script>
 <script src="assets/js/update_stoname.js"></script>
-<script src="assets/js/no-scroll.js"></script>
+<script src="assets/js/scroll.js"></script>
