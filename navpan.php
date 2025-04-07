@@ -255,6 +255,7 @@
             <a href="classification.php" id="classification">Classification</a>
             <a href="storage.php" id="storage">Storage</a>
             <a href="table.php" id="table">View Table</a>
+            <a href="profile.php" id="personal">Profile</a>
         </div>
     </div>
 

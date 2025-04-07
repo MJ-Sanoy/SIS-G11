@@ -1,75 +1,4 @@
 <title style="color: white;">Main Table</title>
-<style>
-.filter-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 10px;
-    margin: 10px auto -35px auto;
-    justify-content: center; /* Center-align items */
-}
-
-.filter-container input,
-.filter-container select,
-#dateFilterButton,
-#resetFilterButton {
-    flex: 1 1 calc(25% - 20px); /* Responsive width: 4 items per row */
-    min-width: 200px; /* Minimum width for smaller screens */
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #756f91;
-    color: #ffffff;
-    text-align: center;
-}
-
-.filter-container input::placeholder {
-    color: #ffffff;
-}
-
-#dateFilterButton, #resetFilterButton {
-    background-color: #756f91;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#dateFilterButton:hover {
-    background-color: #5a5073;
-}
-
-#resetFilterButton {
-    background-color: indianred;
-}
-
-#resetFilterButton:hover {
-    background-color: #b22222;
-}
-
-@media (max-width: 768px) {
-    .filter-container input,
-    .filter-container select,
-    #dateFilterButton,
-    #resetFilterButton {
-        flex: 1 1 calc(50% - 20px); /* 2 items per row for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .filter-container input,
-    .filter-container select,
-    #dateFilterButton,
-    #resetFilterButton {
-        flex: 1 1 100%; /* Full width for very small screens */
-    }
-}
-</style>
 <?php
 include 'db_connect.php';
 
@@ -332,9 +261,21 @@ $conn->close();
             title: '<span style="color: white;">Filter by Date Delivered</span>',
             html: `
                 <div>
-                    <button onclick="showFilter('year')" style="margin: 10px; padding: 10px; background-color: #756f91; color: white; border: none; border-radius: 4px;">Year</button>
-                    <button onclick="showFilter('month-year')" style="margin: 10px; padding: 10px; background-color: #756f91; color: white; border: none; border-radius: 4px;">Month-Year</button>
-                    <button onclick="showFilter('day-month-year')" style="margin: 10px; padding: 10px; background-color: #756f91; color: white; border: none; border-radius: 4px;">Day-Month-Year</button>
+                    <button onclick="showFilter('year')" style="margin: 10px; padding: 15px; background-color: #756f91; color: white; border: none; border-radius: 4px; font-size: 16px; transition: transform 0.3s, background-color 0.3s;" 
+                        onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#5a4d7a';" 
+                        onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#756f91';">
+                        Year
+                    </button>
+                    <button onclick="showFilter('month-year')" style="margin: 10px; padding: 15px; background-color: #756f91; color: white; border: none; border-radius: 4px; font-size: 16px; transition: transform 0.3s, background-color 0.3s;" 
+                        onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#5a4d7a';" 
+                        onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#756f91';">
+                        Month-Year
+                    </button>
+                    <button onclick="showFilter('day-month-year')" style="margin: 10px; padding: 15px; background-color: #756f91; color: white; border: none; border-radius: 4px; font-size: 16px; transition: transform 0.3s, background-color 0.3s;" 
+                        onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#5a4d7a';" 
+                        onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#756f91';">
+                        Day-Month-Year
+                    </button>
                 </div>
                 <div id="yearFilter" style="display: none; margin-top: 20px;">
                     <label for="yearSelect" style="color: white;">Year:</label>
@@ -412,5 +353,41 @@ $conn->close();
         } else if (type === "day-month-year") {
             dayMonthYearFilter.style.display = "block";
         }
+    }
+    const observer = new MutationObserver(() => {
+    const modals = document.querySelectorAll('.swal2-container');
+
+    modals.forEach(modal => {
+        const title = modal.querySelector('.swal2-title');
+        const content = modal.querySelector('.swal2-html-container');
+
+        if (
+            title?.textContent.trim() === 'Error!' &&
+            content?.textContent.trim() === 'Table body not found!'
+        ) {
+            modal.remove(); // Remove only that specific modal
+        }
+    });
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
+
+    // Update the "No results found" message styling
+    const noRecordsMessage = document.querySelector(".no-records");
+    if (noRecordsMessage) {
+        noRecordsMessage.textContent = "No Records Found";
+        noRecordsMessage.style.position = "absolute";
+        noRecordsMessage.style.top = "50%";
+        noRecordsMessage.style.left = "50%";
+        noRecordsMessage.style.transform = "translate(-50%, -50%)";
+        noRecordsMessage.style.fontSize = "50px";
+        noRecordsMessage.style.fontWeight = "bold";
+        noRecordsMessage.style.color = "#FF2C2C";
+        noRecordsMessage.style.backgroundColor = "gray";
+        noRecordsMessage.style.padding = "20px";
+        noRecordsMessage.style.textAlign = "center";
+        noRecordsMessage.style.borderRadius = "10px";
+        noRecordsMessage.style.textShadow = "2px 2px 5px black"; // Add drop shadow to the text
+        noRecordsMessage.style.boxShadow = "0 0 20px 5px rgba(0, 0, 0, 0.8)"; // Add glow shadow to the box
     }
 </script>

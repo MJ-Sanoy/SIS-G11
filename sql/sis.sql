@@ -465,36 +465,8 @@ INSERT INTO `stck` (`stck_id`, `product_id`, `storage_id`, `num_stck`, `remarks`
 (119, 119, 3, 62, 'In stock', 119);
 
 --
--- Triggers `stck`
+-- 
 --
-DELIMITER $$
-CREATE TRIGGER `update_stock_status_after_update` AFTER UPDATE ON `stck` FOR EACH ROW BEGIN
-    -- Check if num_stck has changed
-    IF NEW.num_stck != OLD.num_stck THEN
-        -- Update the remarks based on the new num_stck value for the specific product_id
-        UPDATE stck
-        SET remarks = CASE
-            WHEN NEW.num_stck = 0 THEN 'No available stock'
-            WHEN NEW.num_stck <= 32 THEN 'Low stock'
-            WHEN NEW.num_stck > 32 THEN 'In stock'
-        END
-        WHERE product_id = NEW.product_id;
-    END IF;
-END
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `update_stock_status_before_update` BEFORE UPDATE ON `stck` FOR EACH ROW BEGIN
-    -- Set the remarks before the update takes place
-    SET NEW.remarks = CASE
-        WHEN NEW.num_stck = 0 THEN 'No available stock'
-        WHEN NEW.num_stck <= 32 THEN 'Low stock'
-        WHEN NEW.num_stck > 32 THEN 'In stock'
-    END;
-END
-$$
-DELIMITER ;
-
 -- --------------------------------------------------------
 
 --

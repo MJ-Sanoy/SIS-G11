@@ -1,0 +1,135 @@
+.filter-container {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px auto;
+    justify-content: center;
+    overflow-x: auto; 
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.filter-container input,
+.filter-container select,
+#dateFilterButton,
+#resetFilterButton {
+    width: 200px; /* Set equal width for all elements */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #756f91;
+    color: #ffffff;
+    text-align: center;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.filter-container input::placeholder {
+    color: #ffffff;
+}
+
+#dateFilterButton, #resetFilterButton {
+    background-color: #756f91;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#dateFilterButton:hover {
+    background-color: #5a5073;
+}
+
+#resetFilterButton {
+    background-color: indianred;
+}
+
+#resetFilterButton:hover {
+    background-color: #b22222;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-container input,
+    .filter-container select,
+    #dateFilterButton,
+    #resetFilterButton {
+        width: 100%;
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .filter-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .filter-container input,
+    .filter-container select,
+    #dateFilterButton,
+    #resetFilterButton {
+        width: 45%;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .filter-container {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .filter-container input,
+    .filter-container select,
+    #dateFilterButton,
+    #resetFilterButton {
+        width: auto;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .filter-container {
+        gap: 15px;
+    }
+
+    .filter-container input,
+    .filter-container select,
+    #dateFilterButton,
+    #resetFilterButton {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .filter-container {
+        gap: 20px;
+    }
+
+    .filter-container input,
+    .filter-container select,
+    #dateFilterButton,
+    #resetFilterButton {
+        font-size: 16px;
+    }
+}

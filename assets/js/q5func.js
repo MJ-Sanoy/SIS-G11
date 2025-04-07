@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     noRecordsMessage.textContent = "NO RECORDS AVAILABLE";
     noRecordsMessage.style.textAlign = "center";
     noRecordsMessage.style.color = "red";
+    noRecordsMessage.style.fontSize = "40px";
     noRecordsMessage.style.marginTop = "10px";
     noRecordsMessage.style.display = "none"; // Initially hidden
     table.parentNode.insertBefore(noRecordsMessage, table.nextSibling);

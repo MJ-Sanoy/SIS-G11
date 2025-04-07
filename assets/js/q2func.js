@@ -1,4 +1,3 @@
-// Function to filter table rows based on product name, classification, storage location, and stock range
 function filterTable() {
     const searchInput = document.getElementById("searchInput").value.trim().toLowerCase();
     const classificationFilter = document.getElementById("classificationFilter").value.toLowerCase();
@@ -6,6 +5,9 @@ function filterTable() {
     const stockFilter = document.getElementById("stockFilter").value;
     const table = document.getElementById("productTable");
     const rows = table.getElementsByTagName("tr");
+    const noRecordsMessage = document.getElementById("noRecordsMessage");
+
+    let hasVisibleRows = false;
 
     for (let i = 1; i < rows.length; i++) {
         const productName = rows[i].getElementsByTagName("td")[0].textContent.trim().toLowerCase();
@@ -27,7 +29,12 @@ function filterTable() {
             matchesStock = stock > 32;
         }
 
-        rows[i].style.display = matchesSearch && matchesClassification && matchesStorage && matchesStock ? "" : "none";
+        const isVisible = matchesSearch && matchesClassification && matchesStorage && matchesStock;
+        rows[i].style.display = isVisible ? "" : "none";
+
+        if (isVisible) {
+            hasVisibleRows = true;
+        }
 
         // Apply color to the Number of Stocks column based on its value
         if (stock === 0) {
@@ -40,6 +47,9 @@ function filterTable() {
             stockCell.style.backgroundColor = "#EEEEEE";
         }
     }
+
+    // Show or hide the "NO RECORDS AVAILABLE" message
+    noRecordsMessage.style.display = hasVisibleRows ? "none" : "block";
 }
 
 // Function to populate classification filter dynamically
@@ -94,6 +104,18 @@ document.addEventListener("DOMContentLoaded", () => {
     populateClassificationFilter();
     populateStorageFilter();
 
-    // Apply colors to cells immediately when the page loads
+    // Add a "NO RECORDS AVAILABLE" message element below the table
+    const table = document.getElementById("productTable");
+    const noRecordsMessage = document.createElement("div");
+    noRecordsMessage.id = "noRecordsMessage";
+    noRecordsMessage.textContent = "NO RECORDS AVAILABLE";
+    noRecordsMessage.style.textAlign = "center";
+    noRecordsMessage.style.color = "red";
+    noRecordsMessage.style.fontSize = "40px";
+    noRecordsMessage.style.marginTop = "10px";
+    noRecordsMessage.style.display = "none";
+    table.parentNode.insertBefore(noRecordsMessage, table.nextSibling);
+
+    // Initial run
     filterTable();
 });

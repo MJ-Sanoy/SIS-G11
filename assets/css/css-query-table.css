@@ -9,12 +9,16 @@
 
 .product-table {
     width: 50%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 50px auto;
     color: white;
     margin-bottom: 100px;
     margin-top: 10px;
     animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .nav {
@@ -27,18 +31,21 @@
 }
 
 .table-heading {
-    padding: 8px;
-    border: 1px solid #ddd;
+    padding: 16px;
     text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .table-row {
     background-color: #333;
-    transition: 0.2s;
+    transition: all 0.3s ease;
 }
 
 .table-row:hover {
-    scale: 1.050;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .table-row:nth-child(even) {
@@ -50,28 +57,34 @@
 }
 
 .table-cell {
-    padding: 8px;
-    border: 1px solid #ddd;
+    padding: 12px 16px;
     text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .no-records {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     color: red;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 24px;
+    padding: 16px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 6px;
 }
 
 .btn {
-    display: inline-block;
-    padding: 8px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 6px;
+    transition: all 0.3s ease;
     border: none;
+    cursor: pointer;
 }
 
 .btn-delete {
@@ -81,24 +94,36 @@
 
 .btn-delete:hover {
     background-color: #5e24a9c8;
+    transform: translateY(-1px);
 }
 
 .editable-dropdown {
     background-color: #444;
     color: #FFFFFF;
-    border: 1px solid #555;
-    padding: 5px;
-    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.editable-dropdown:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
 }
 
 .editable-dropdown option {
     background-color: #333;
     color: #FFFFFF;
+    padding: 8px;
 }
 
 .editable {
     background-color: #333;
     color: #FFFFFF;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .swal2-dark-warning-icon .swal2-icon.swal2-warning {
@@ -108,6 +133,8 @@
 .swal2-gray-popup {
     background-color: #333 !important;
     color: white !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
 .table-container {
@@ -120,12 +147,17 @@
 .gray-background {
     background-color: #333;
     color: white;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.filter-container{
+.filter-container {
     animation: fadeIn 1s ease-in-out;
+    padding: 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 20px;
 }
 
 /* 📱 Mobile: 0 - 480px */
